@@ -98,11 +98,13 @@
       background: linear-gradient(180deg, #0D2137 0%, #1B3A5C 100%);
     }
 
-    /* Video embed placeholder */
+   /* Video embed placeholder */
+    
     .video-placeholder {
       background: linear-gradient(135deg, #1B3A5C 0%, #0D2137 100%);
       aspect-ratio: 16/9;
     }
+
 
     /* Photo grid hover */
     .photo-thumb {
@@ -229,7 +231,7 @@
       <h2 class="font-display text-4xl md:text-5xl font-light text-navy whitespace-nowrap px-4">Senior Portraits</h2>
     </div>
     <p class="font-sans text-sm font-light text-navy/60 mt-5 max-w-md mx-auto leading-relaxed">
-      Meticulously edited and carefully composed portraits that celebrate your final year of high school.
+      Celebrate your final year of high school!
     </p>
   </div>
 
@@ -398,7 +400,6 @@
 
 </section>
 
-
 <!-- ─────────────────────────────────────────
      SPORTS PHOTOGRAPHY & VIDEOGRAPHY
 ───────────────────────────────────────── -->
@@ -429,35 +430,55 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
-        <!-- Video highlight reel -->
+        <!-- Basketball highlight reel (vertical 9:16) -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Highlight Reel</p>
-          <!-- Replace this div with an <iframe> embed from YouTube/Vimeo -->
-          <div class="video-placeholder rounded-sm flex flex-col items-center justify-center text-white/30">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 mb-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p class="font-display italic text-sm tracking-wide opacity-60">Basketball Highlight Reel</p>
-            <p class="font-sans text-xs mt-1 opacity-40">embed video here</p>
+          <div class="flex justify-center">
+            <div class="relative rounded-sm overflow-hidden w-full max-w-xs" style="aspect-ratio: 9/16;">
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/JlC5iFJN-j8?si=Fsk51xHlzsJx3L6z"
+                title="Basketball Highlight Reel"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
 
-        <!-- Photo grid -->
+        <!-- Basketball photos (4x, landscape 4:3) -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Photos</p>
-          <div class="grid grid-cols-2 gap-2 h-full">
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#1B3A5C,#0D2137);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczPXRgCcE_TGH6WXZGrOXrCN66RWi3oqtfccejUwMtAGOVjhjZHJFZA6gFe9CYFSQygq2Q9CszdBHHK6i6g-zlBuWDC0lbmPTY8j0KB6DanCN5eESw-ieO-72XdBU2GoUigUfaYXSWI4-lJ1nwv3XfbI=w1200"
+                alt="Basketball photo 1"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#2a5480,#1B3A5C);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczOAQU7bf7Sf7i3ul-YNkkZebf-GKuGv6_Z7uhuEI5Xt1lh9sV-r-RqSWE2EfKlL9WRC3NayTXGrR9Tom9pDUozTg2dJaadOLKy4j4iCmQfiyjmpsSCXrvNmvsDvqWoED_Lb9oH7rn_kqBYgngMStqxS=w1200"
+                alt="Basketball photo 2"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#0D2137,#5B9EC9);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczNJBNrHdzvFObiT9VITo_pKykoWrPEelh1w2Piw0Ttm3ExNRD9tnD3W95bzB7Uf_8cPdvLcIXyFHDiEloERycaSDiCgUvdZlTMOQqUF_47CQSggHl4Xlq8HXiXq9VqrKfxAYi2pUDBwuHwwjUS0EUP_=w1200"
+                alt="Basketball photo 3"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#3a6b90,#0D2137);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczPsY-q966VRH9SlWpKQ2Y-byaJKyQJ9ov3nc5PMK47PprgPTBAzwafFqeHT5Y_zWm1E1cXjbX_i5OlblDp5MQWzWDTKDHfBMilHhYewvC4o0Lny8XjMhJExuTyJ3ZbdZ8BgzqktxrilWgkH8qnYoNmk=w1200"
+                alt="Basketball photo 4"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -475,34 +496,55 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
-        <!-- Video -->
+        <!-- Crew highlight reel (vertical 9:16) -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">On the Water</p>
-          <div class="video-placeholder rounded-sm flex flex-col items-center justify-center text-white/30">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 mb-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p class="font-display italic text-sm tracking-wide opacity-60">Crew Video</p>
-            <p class="font-sans text-xs mt-1 opacity-40">embed video here</p>
+          <div class="flex justify-center">
+            <div class="relative rounded-sm overflow-hidden w-full max-w-xs" style="aspect-ratio: 9/16;">
+              <iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/vrVpq5DlZiY?si=AbUDLywQ1l_9MLuC"
+                title="Crew Highlight Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
           </div>
         </div>
 
-        <!-- Photo grid -->
+        <!-- Crew photos (4x, landscape 4:3) -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Photos</p>
           <div class="grid grid-cols-2 gap-2">
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#5B9EC9,#1B3A5C);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczOwm7hq2K8xnLqim7agEwk-Ef0N33NeS6CMp0p4g93f02cg4vbZEm-_4ueHZY9ctIKkCKOKhldnooe08_ueWmBQQSI1w425hUEUX4Az0U4epMwvUpMaF0iGErlHAH5bDjQzoV1LTT8Ti0Hg-YH-BYtx=w1200"
+                alt="Crew photo 1"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#0D2137,#3a6b90);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczMMte4ikbJLNa8Bs23T__DwYmPZsRg4L0MQR0AbnoicxfyTLeyK3O2EkNdbtk2YA-FsqKSTtakVuUFer_t0ZVLYb0W5ydtSpN5zEJqHGkywbnrXg3irjIRzKC1G85pcIUpBxhLEiDUG9U2sa0AtgT4L=w1200"
+                alt="Crew photo 2"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#1B3A5C,#5B9EC9);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczOj8i2Po0KMMOPA-KOgAIguk5Bhgjs_88GaUn0-ue65lJCFueeKZwTQOYSzNSezd_XjRQRWo1_qDFQhy7NfTwLBP8ZxNw46jSrxEC5N1SusOtA4Ca8S8FoXU9xRqWRU9utW7Oja38YJNWkMMiMoQWnr=w1200"
+                alt="Crew photo 3"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="photo-thumb rounded-sm" style="background: linear-gradient(135deg,#2a5480,#0D2137);">
-              <div class="w-full h-full flex items-center justify-center text-white/20 font-display italic text-xs">photo</div>
+            <div class="photo-thumb rounded-sm overflow-hidden" style="aspect-ratio: 4/3;">
+              <img
+                src="https://lh3.googleusercontent.com/pw/AP1GczMeONyJvqMQPIXDZQ6p-GFneZ8FIFw9_D4FlClmhZd0D6jYUzLQSOSlsG2ah2j08sgETFYt50yLzzvQB5hCp6ZbBmk3hRn5JdLoBjvsvuMbXVHwOYpdIVq6774Bv8KiPoqhY7dQRxBONpbh3IBoXopK=w1200"
+                alt="Crew photo 4"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -523,7 +565,6 @@
 
   </div>
 </section>
-
 
 <!-- ─────────────────────────────────────────
      BOOKING & CONTACT
