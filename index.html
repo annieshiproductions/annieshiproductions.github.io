@@ -206,20 +206,14 @@
     </div>
   </div>
 
-  <!-- Right: Hero photo placeholder -->
-  <div class="flex-1 hero-photo min-h-72 md:min-h-screen order-1 md:order-2 relative overflow-hidden">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-white/20">
-      <!-- Camera icon SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 mb-4 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <p class="font-display text-lg italic tracking-widest opacity-60">your photo here</p>
-    </div>
-    <!-- Subtle overlay gradient -->
-    <div class="absolute inset-0 bg-gradient-to-l from-transparent to-sky/20 pointer-events-none"></div>
-  </div>
-
+ <!-- Right: Hero photo -->
+<div class="flex-1 hero-photo min-h-72 md:min-h-screen order-1 md:order-2 relative overflow-hidden">
+  <img
+    src="https://lh3.googleusercontent.com/pw/AP1GczPD3rYOXb8rswPMfckDFpUEDzHc45kEnsazDC6oP18FJ_ZCVgOJrZ-ha_piFsV6-6D6pZmVrFXG2hrs76NOuoxJ3UwpBU_dgueP02FRafd29HnjSqss57iL5qay8SQo5Pf_sWJUqvQvZKBtQiTtIO40=w1312-h1624-s-no-gm?authuser=0=w1800"
+    alt="Annie Shi Productions — portrait photography"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+    
 </section>
 
 
@@ -239,24 +233,55 @@
     </p>
   </div>
 
-  <!-- Photo gallery placeholder grid -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-20">
-    <div class="photo-thumb rounded-sm col-span-2 row-span-2" style="aspect-ratio:1/1; background: linear-gradient(135deg,#c5e2f5,#5B9EC9);">
-      <div class="w-full h-full flex items-center justify-center text-white/30 font-display italic text-sm">portrait</div>
-    </div>
-    <div class="photo-thumb rounded-sm" style="background: linear-gradient(145deg,#B8D9F0,#7ab3d4);">
-      <div class="w-full h-full flex items-center justify-center text-white/30 font-display italic text-xs">portrait</div>
-    </div>
-    <div class="photo-thumb rounded-sm" style="background: linear-gradient(145deg,#8fc7e8,#1B3A5C);">
-      <div class="w-full h-full flex items-center justify-center text-white/30 font-display italic text-xs">portrait</div>
-    </div>
-    <div class="photo-thumb rounded-sm" style="background: linear-gradient(145deg,#d0eaf8,#5B9EC9);">
-      <div class="w-full h-full flex items-center justify-center text-white/30 font-display italic text-xs">portrait</div>
-    </div>
-    <div class="photo-thumb rounded-sm" style="background: linear-gradient(145deg,#5B9EC9,#0D2137);">
-      <div class="w-full h-full flex items-center justify-center text-white/30 font-display italic text-xs">portrait</div>
-    </div>
+ <!-- Photo gallery grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-20">
+
+  <!-- Photo 1 — large tile (top-left, 2×2) -->
+  <div class="photo-thumb rounded-sm col-span-2 row-span-2 overflow-hidden" style="aspect-ratio:1/1;">
+    <img
+      src="https://lh3.googleusercontent.com/pw/AP1GczMQV82CqO_JuzgJVX64S63IxVVGHNv70ZHAaSPVxapey71vnCKay75jMEq2czvzNIlg0dkzFeBttmKGyGWksCIkPF94dzA62beg5KmwdBFtQd3b0YSo9PXqcNnQhpz0JDwrlH3EqUYzePysuvutnhyW=w1200"
+      alt="Senior portrait session"
+      class="w-full h-full object-cover"
+    />
   </div>
+
+  <!-- Photo 2 — small tile -->
+  <div class="photo-thumb rounded-sm overflow-hidden">
+    <img
+      src="https://lh3.googleusercontent.com/pw/AP1GczNDcKnmtW08MY2-BHSMg_vufGxek7_q6lrLt-RRTLuPKtCedQFj7Z3nvqTaUzMF5o24VyMQmEqe6AVzQbqZQWAURIfZuML4k2fGmJgEazA7BmG8Mu5Y-9FT7C0rtoBAho5Uj_LSolQQmZiJGsDWEAVT=w800"
+      alt="Senior portrait session"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Photo 3 — small tile -->
+  <div class="photo-thumb rounded-sm overflow-hidden">
+    <img
+      src="https://lh3.googleusercontent.com/pw/AP1GczPjqu_7AD3c6NXmxohgo8J9xeyRfwtuOSLFieOzNKg3yfSv8H9VSVAnFhB66IojZr-8RACXe-rHe61hwOD6yPT_Jn0lmbvq_3qcdDI1wobAjTF7CU1L0roDJJmbJnLjwUjqCUlWCYyqrdBjGUkeQ6ZY=w800"
+      alt="Senior portrait session"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Photo 4 — small tile -->
+  <div class="photo-thumb rounded-sm overflow-hidden">
+    <img
+      src="https://lh3.googleusercontent.com/pw/AP1GczNaqgQLOPjS0Ai8nRpLPIHJSnTOKWfz9vTdZv5ikTgzO1nYw5kRZklsXEKTEC8S3TZmQj_f4nXznbZM_PQWYEBOF9BmaJZi0-Xv8dtkSJm_y4-fAX-Z8xHn8f_VFqvtfFWyy4nBuXZSLq7iWc8K70rv=w1200"
+      alt="Senior portrait session"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Photo 5 — small tile -->
+  <div class="photo-thumb rounded-sm overflow-hidden">
+    <img
+      src="https://lh3.googleusercontent.com/pw/AP1GczObpKpukzXJDAQ2S8Be1I-6gbhHeH-qcf8LFWAq_2IGUuwMg_gyTwgwPlG0u2Ii6CSYNugrYTqQ6ZEfWgAeTNgI4pKCFitkJGoCZXDP0JvasxgmP8KT3w2LJB6zdyc0ZYdOtoXHdJFPTq4HDxNGno3k=w800"
+      alt="Senior portrait session"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+</div>
 
   <!-- Pricing cards -->
   <div class="text-center mb-12">
