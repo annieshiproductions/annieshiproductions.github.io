@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Annie Shi Productions</title>
+  
+  <!-- Custom Favicon -->
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczMHkEaqd9NcOBHxkyabCUeMmXyMNrXOvHOnEd5B7RMuiuaZeIguW4TUjXWnLruWMFruUR0CONMQoN8EPiAE4GjOPrId3cIN37jL6RUk-r-8JdiItOoXUhDFQb2rHwaDTXnxj7gfU4B48cnLeQ_onkSr=w1556-h1556-s-no-gm?authuser=3">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -65,11 +68,6 @@
     .nav-link:hover::after { width: 100%; }
     .nav-link:hover { color: #5B9EC9; }
 
-    /* Hero placeholder */
-    .hero-photo {
-      background: linear-gradient(135deg, #B8D9F0 0%, #5B9EC9 60%, #1B3A5C 100%);
-    }
-
     /* Pricing card hover */
     .price-card {
       transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -98,18 +96,15 @@
       background: linear-gradient(180deg, #0D2137 0%, #1B3A5C 100%);
     }
 
-   /* Video embed placeholder */
-    
+    /* Video embed placeholder */
     .video-placeholder {
       background: linear-gradient(135deg, #1B3A5C 0%, #0D2137 100%);
       aspect-ratio: 16/9;
     }
 
-
-    /* Photo grid hover */
+    /* Photo grid/carousel hover */
     .photo-thumb {
       background: linear-gradient(135deg, #B8D9F0, #5B9EC9);
-      aspect-ratio: 4/3;
       transition: opacity 0.2s;
       cursor: pointer;
     }
@@ -132,6 +127,15 @@
     #mobile-menu.open {
       max-height: 400px;
       opacity: 1;
+    }
+
+    /* Hide scrollbar for carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
@@ -179,49 +183,42 @@
 <!-- ─────────────────────────────────────────
      HERO
 ───────────────────────────────────────── -->
-<section id="home" class="pt-16 min-h-screen flex flex-col md:flex-row">
+<section id="home" class="relative min-h-[90vh] flex items-center justify-center md:justify-start pt-16 overflow-hidden">
+  
+  <!-- Full Background Image -->
+  <img
+    src="https://lh3.googleusercontent.com/pw/AP1GczPc_w4HxkeCxCwQOOGJhDlodpZSNTyztmbKz8Pp2Qips-RWDpI1sOexZQncBXUUP22_ewigd5wHTlh_ZKyRE-EN7PYrTxwha9OFWPpKPO8CC9h9WmvvdaUrIRQ3Ft1LhjBNNShFuxKTIVHtW-6RAb5x=w2504-h1556-s-no-gm?authuser=3"
+    alt="Annie Shi Productions Hero"
+    class="absolute inset-0 w-full h-full object-cover object-center z-0"
+  />
 
-  <!-- Left: Text -->
-  <div class="flex-1 flex flex-col justify-center px-8 md:px-16 py-20 md:py-0 order-2 md:order-1">
-    <p class="font-sans text-xs tracking-[0.25em] uppercase text-mid-blue mb-5">Boston, MA</p>
-    <h1 class="font-display text-5xl md:text-7xl font-light leading-tight text-navy mb-6">
-      Capturing<br/><em class="font-light italic text-mid-blue">moments</em><br/>that matter.
+  <!-- Frosted Glass Content Box -->
+  <div class="relative z-10 bg-white/40 backdrop-blur-md border border-white/50 shadow-2xl p-8 md:p-12 mx-5 sm:mx-10 md:ml-[10%] w-full max-w-lg rounded-sm text-center md:text-left">
+    <p class="font-sans text-xs tracking-[0.25em] uppercase text-navy mb-4 font-medium">Brookline and Boston, MA</p>
+    
+    <h1 class="font-display text-5xl md:text-6xl font-light tracking-[0.18em] text-navy mb-2 leading-[1.1]">
+      Annie Shi<br/>
+      <span class="font-medium">Productions</span>
     </h1>
-    <p class="font-sans text-sm font-light leading-relaxed text-navy/70 max-w-xs mb-10">
-      Senior portraits &amp; sports photography
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="#booking" class="inline-block bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-8 py-4 hover:bg-mid-blue transition-colors duration-300">
-        Book a Session
-      </a>
-      <a href="#senior" class="inline-block border border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-8 py-4 hover:border-mid-blue hover:text-mid-blue transition-colors duration-300">
-        View Work
-      </a>
-    </div>
-
-    <!-- Contact strip -->
-    <div class="mt-14 pt-8 border-t border-baby-blue/50 flex flex-col gap-1">
-      <p class="font-sans text-xs tracking-widest text-navy/50 uppercase mb-1">Get in touch</p>
-      <a href="mailto:annieshifiles@gmail.com" class="font-sans text-xs text-mid-blue hover:underline">annieshifiles@gmail.com</a>
-      <a href="https://instagram.com/annieshiproductions" target="_blank" class="font-sans text-xs text-navy/70 hover:text-mid-blue transition-colors">@annieshiproductions</a>
+    
+    <p class="font-display text-xl md:text-2xl italic text-navy mb-10">Photography &amp; Videography</p>
+    
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#senior" class="flex-1 bg-navy/95 text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 backdrop-blur-sm text-center">Senior Portraits</a>
+        <a href="#sports" class="flex-1 bg-navy/95 text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 backdrop-blur-sm text-center">Sports</a>
+      </div>
+      <a href="#booking" class="block w-full border-2 border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-navy hover:text-sky transition-colors duration-300 bg-white/40 backdrop-blur-sm text-center">Book a Session</a>
     </div>
   </div>
 
- <!-- Right: Hero photo -->
-<div class="flex-1 hero-photo min-h-72 md:min-h-screen order-1 md:order-2 relative overflow-hidden">
-  <img
-    src="https://lh3.googleusercontent.com/pw/AP1GczPD3rYOXb8rswPMfckDFpUEDzHc45kEnsazDC6oP18FJ_ZCVgOJrZ-ha_piFsV6-6D6pZmVrFXG2hrs76NOuoxJ3UwpBU_dgueP02FRafd29HnjSqss57iL5qay8SQo5Pf_sWJUqvQvZKBtQiTtIO40=w1312-h1624-s-no-gm?authuser=0=w1800"
-    alt="Annie Shi Productions — portrait photography"
-    class="absolute inset-0 w-full h-full object-cover"
-  />
-    
 </section>
 
 
 <!-- ─────────────────────────────────────────
      SENIOR PORTRAITS
 ───────────────────────────────────────── -->
-<section id="senior" class="py-24 px-6 md:px-16 max-w-6xl mx-auto">
+<section id="senior" class="py-24 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
 
   <!-- Section header -->
   <div class="mb-16 text-center">
@@ -234,59 +231,78 @@
     </p>
   </div>
 
- <!-- Photo gallery grid -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-20">
+  <!-- Swipeable Photo Gallery -->
+  <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 mb-12 no-scrollbar md:-mx-16 md:px-16 -mx-6 px-6">
 
-  <!-- Photo 1 — large tile (top-left, 2×2) -->
-  <div class="photo-thumb rounded-sm col-span-2 row-span-2 overflow-hidden" style="aspect-ratio:1/1;">
-    <img
-      src="https://lh3.googleusercontent.com/pw/AP1GczMQV82CqO_JuzgJVX64S63IxVVGHNv70ZHAaSPVxapey71vnCKay75jMEq2czvzNIlg0dkzFeBttmKGyGWksCIkPF94dzA62beg5KmwdBFtQd3b0YSo9PXqcNnQhpz0JDwrlH3EqUYzePysuvutnhyW=w1200"
-      alt="Senior portrait session"
-      class="w-full h-full object-cover"
-    />
+    <!-- Photo 1 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczOhbL243bcIIOBBqaSEHEJR8G3CxibPBTzTgl5DmHgcq2xY1AQclJ_NC5EJPZnjp29_ydqN3zErsqySrzE30jHWaEG9BNiKAee-k7MFlP65umDjYhP0HqRxUzDTpeasOfIdsdlxHVsd_JsXXM53Y1vI=w1168-h1556-s-no-gm?authuser=3"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczMQV82CqO_JuzgJVX64S63IxVVGHNv70ZHAaSPVxapey71vnCKay75jMEq2czvzNIlg0dkzFeBttmKGyGWksCIkPF94dzA62beg5KmwdBFtQd3b0YSo9PXqcNnQhpz0JDwrlH3EqUYzePysuvutnhyW=w1200"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczNDcKnmtW08MY2-BHSMg_vufGxek7_q6lrLt-RRTLuPKtCedQFj7Z3nvqTaUzMF5o24VyMQmEqe6AVzQbqZQWAURIfZuML4k2fGmJgEazA7BmG8Mu5Y-9FT7C0rtoBAho5Uj_LSolQQmZiJGsDWEAVT=w800"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczPjqu_7AD3c6NXmxohgo8J9xeyRfwtuOSLFieOzNKg3yfSv8H9VSVAnFhB66IojZr-8RACXe-rHe61hwOD6yPT_Jn0lmbvq_3qcdDI1wobAjTF7CU1L0roDJJmbJnLjwUjqCUlWCYyqrdBjGUkeQ6ZY=w800"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 5 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczOAohCXEjnS0Q8n1VGsAW-hHlUwB4D7rK179NMdt-UwwOuUhlbZh-sZdb-f9q8vENxcynyVWRY_bgJDFz4QQkKus1IeyNeaF561HvEh00ASQHtoIX4O0NfahIpcx78hqSb04Mb408sWi-WneCHJYGjp=w1168-h1556-s-no-gm?authuser=3"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 6 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczNaqgQLOPjS0Ai8nRpLPIHJSnTOKWfz9vTdZv5ikTgzO1nYw5kRZklsXEKTEC8S3TZmQj_f4nXznbZM_PQWYEBOF9BmaJZi0-Xv8dtkSJm_y4-fAX-Z8xHn8f_VFqvtfFWyy4nBuXZSLq7iWc8K70rv=w1200"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 7 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczObpKpukzXJDAQ2S8Be1I-6gbhHeH-qcf8LFWAq_2IGUuwMg_gyTwgwPlG0u2Ii6CSYNugrYTqQ6ZEfWgAeTNgI4pKCFitkJGoCZXDP0JvasxgmP8KT3w2LJB6zdyc0ZYdOtoXHdJFPTq4HDxNGno3k=w800"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
   </div>
-
-  <!-- Photo 2 — small tile -->
-  <div class="photo-thumb rounded-sm overflow-hidden">
-    <img
-      src="https://lh3.googleusercontent.com/pw/AP1GczNDcKnmtW08MY2-BHSMg_vufGxek7_q6lrLt-RRTLuPKtCedQFj7Z3nvqTaUzMF5o24VyMQmEqe6AVzQbqZQWAURIfZuML4k2fGmJgEazA7BmG8Mu5Y-9FT7C0rtoBAho5Uj_LSolQQmZiJGsDWEAVT=w800"
-      alt="Senior portrait session"
-      class="w-full h-full object-cover"
-    />
-  </div>
-
-  <!-- Photo 3 — small tile -->
-  <div class="photo-thumb rounded-sm overflow-hidden">
-    <img
-      src="https://lh3.googleusercontent.com/pw/AP1GczPjqu_7AD3c6NXmxohgo8J9xeyRfwtuOSLFieOzNKg3yfSv8H9VSVAnFhB66IojZr-8RACXe-rHe61hwOD6yPT_Jn0lmbvq_3qcdDI1wobAjTF7CU1L0roDJJmbJnLjwUjqCUlWCYyqrdBjGUkeQ6ZY=w800"
-      alt="Senior portrait session"
-      class="w-full h-full object-cover"
-    />
-  </div>
-
-  <!-- Photo 4 — small tile -->
-  <div class="photo-thumb rounded-sm overflow-hidden">
-    <img
-      src="https://lh3.googleusercontent.com/pw/AP1GczNaqgQLOPjS0Ai8nRpLPIHJSnTOKWfz9vTdZv5ikTgzO1nYw5kRZklsXEKTEC8S3TZmQj_f4nXznbZM_PQWYEBOF9BmaJZi0-Xv8dtkSJm_y4-fAX-Z8xHn8f_VFqvtfFWyy4nBuXZSLq7iWc8K70rv=w1200"
-      alt="Senior portrait session"
-      class="w-full h-full object-cover"
-    />
-  </div>
-
-  <!-- Photo 5 — small tile -->
-  <div class="photo-thumb rounded-sm overflow-hidden">
-    <img
-      src="https://lh3.googleusercontent.com/pw/AP1GczObpKpukzXJDAQ2S8Be1I-6gbhHeH-qcf8LFWAq_2IGUuwMg_gyTwgwPlG0u2Ii6CSYNugrYTqQ6ZEfWgAeTNgI4pKCFitkJGoCZXDP0JvasxgmP8KT3w2LJB6zdyc0ZYdOtoXHdJFPTq4HDxNGno3k=w800"
-      alt="Senior portrait session"
-      class="w-full h-full object-cover"
-    />
-  </div>
-
-</div>
+  
+  <p class="text-center font-sans text-xs text-navy/40 mb-16 md:hidden">Swipe to see more &rarr;</p>
 
   <!-- Pricing cards -->
   <div class="text-center mb-12">
-    <p class="font-sans text-xs tracking-[0.3em] uppercase text-mid-blue mb-2">$</p>
     <h3 class="font-display text-3xl font-light text-navy">Pricing</h3>
   </div>
 
@@ -318,7 +334,7 @@
       <ul class="font-sans text-sm text-sky/70 space-y-3 flex-1 mb-8">
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>One person</li>
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>1-hour session</li>
-        <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>25 minimum edited digital photos</li>
+        <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>30 minimum edited digital photos</li>
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>Online gallery access</li>
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>Available within 3 days</li>
       </ul>
@@ -334,7 +350,7 @@
       <ul class="font-sans text-sm text-navy/70 space-y-3 flex-1 mb-8">
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Two people</li>
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>90-minute session</li>
-        <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>40 minimum edited digital photos</li>
+        <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>45 minimum edited digital photos</li>
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Online gallery access</li>
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Available within 3 days</li>
       </ul>
@@ -581,7 +597,7 @@
   </div>
 
   <div class="max-w-2xl mx-auto">
-    <!-- FORM: powered by Formspree — replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+    <!-- FORM: powered by Formspree -->
     <form
       id="booking-form"
       action="https://formspree.io/f/xgojlwnk"
@@ -589,7 +605,6 @@
       class="space-y-6"
       onsubmit="handleFormSubmit(event)"
     >
-      <!-- Hidden field to specify recipient (Formspree uses the account email by default) -->
       <input type="hidden" name="_replyto" value="annieshifiles@gmail.com" />
       <input type="hidden" name="_subject" value="New Booking Request — Annie Shi Productions" />
 
@@ -704,8 +719,6 @@
       <div>
         <p class="font-sans text-xs tracking-[0.25em] uppercase text-baby-blue/60 mb-4">Contact</p>
         <ul class="font-sans text-xs space-y-3 text-sky/50">
-          <li>
-          </li>
           <li>
             <a href="mailto:annieshifiles@gmail.com" class="hover:text-baby-blue transition-colors">annieshifiles@gmail.com</a>
           </li>
@@ -840,3 +853,4 @@
 
 </body>
 </html>
+```eof
