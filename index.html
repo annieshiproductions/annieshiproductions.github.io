@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- STREAMING_CHUNK:Configuring Tailwind Theme -->
   <script>
     tailwind.config = {
       theme: {
@@ -36,6 +37,7 @@
     }
   </script>
 
+  <!-- STREAMING_CHUNK:Defining Custom CSS Styles -->
   <style>
     html { scroll-behavior: smooth; }
 
@@ -141,6 +143,7 @@
 </head>
 <body class="antialiased">
 
+<!-- STREAMING_CHUNK:Building Navigation Bar -->
 <!-- ─────────────────────────────────────────
      NAVIGATION
 ───────────────────────────────────────── -->
@@ -180,20 +183,21 @@
 </nav>
 
 
+<!-- STREAMING_CHUNK:Rendering Hero Section with Mobile Adjustments -->
 <!-- ─────────────────────────────────────────
      HERO
 ───────────────────────────────────────── -->
-<section id="home" class="relative min-h-[90vh] flex items-center justify-center md:justify-start pt-16 overflow-hidden">
+<section id="home" class="relative min-h-[90vh] md:min-h-screen flex items-center justify-center md:justify-start pt-16 overflow-hidden bg-gradient-to-br from-sky via-[#F2F8FC] to-baby-blue md:bg-none">
   
-  <!-- Full Background Image -->
+  <!-- Full Background Image (Hidden on Mobile) -->
   <img
     src="https://lh3.googleusercontent.com/pw/AP1GczPc_w4HxkeCxCwQOOGJhDlodpZSNTyztmbKz8Pp2Qips-RWDpI1sOexZQncBXUUP22_ewigd5wHTlh_ZKyRE-EN7PYrTxwha9OFWPpKPO8CC9h9WmvvdaUrIRQ3Ft1LhjBNNShFuxKTIVHtW-6RAb5x=w2504-h1556-s-no-gm?authuser=3"
     alt="Annie Shi Productions Hero"
-    class="absolute inset-0 w-full h-full object-cover object-center z-0"
+    class="hidden md:block absolute inset-0 w-full h-full object-cover object-center z-0"
   />
 
-  <!-- Frosted Glass Content Box -->
-  <div class="relative z-10 bg-white/40 backdrop-blur-md border border-white/50 shadow-2xl p-8 md:p-12 mx-5 sm:mx-10 md:ml-[10%] w-full max-w-lg rounded-sm text-center md:text-left">
+  <!-- Content Box (Solid/Clean on Mobile, Frosted Glass on Desktop) -->
+  <div class="relative z-10 md:bg-white/40 md:backdrop-blur-md md:border md:border-white/50 md:shadow-2xl p-8 md:p-12 mx-5 sm:mx-10 md:ml-[10%] w-full max-w-lg rounded-sm text-center md:text-left">
     <p class="font-sans text-xs tracking-[0.25em] uppercase text-navy mb-4 font-medium">Brookline and Boston, MA</p>
     
     <h1 class="font-display text-5xl md:text-6xl font-light tracking-[0.18em] text-navy mb-2 leading-[1.1]">
@@ -205,16 +209,17 @@
     
     <div class="flex flex-col gap-4">
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#senior" class="flex-1 bg-navy/95 text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 backdrop-blur-sm text-center">Senior Portraits</a>
-        <a href="#sports" class="flex-1 bg-navy/95 text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 backdrop-blur-sm text-center">Sports</a>
+        <a href="#senior" class="flex-1 bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 md:backdrop-blur-sm text-center">Senior Portraits</a>
+        <a href="#sports" class="flex-1 bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 md:backdrop-blur-sm text-center">Sports</a>
       </div>
-      <a href="#booking" class="block w-full border-2 border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-navy hover:text-sky transition-colors duration-300 bg-white/40 backdrop-blur-sm text-center">Book a Session</a>
+      <a href="#booking" class="block w-full border-2 border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-navy hover:text-sky transition-colors duration-300 bg-transparent md:bg-white/40 md:backdrop-blur-sm text-center">Book a Session</a>
     </div>
   </div>
 
 </section>
 
 
+<!-- STREAMING_CHUNK:Constructing Senior Portraits Section with Carousel -->
 <!-- ─────────────────────────────────────────
      SENIOR PORTRAITS
 ───────────────────────────────────────── -->
@@ -301,6 +306,7 @@
   
   <p class="text-center font-sans text-xs text-navy/40 mb-16 md:hidden">Swipe to see more &rarr;</p>
 
+<!-- STREAMING_CHUNK:Laying out Pricing Cards with Dollar Signs -->
   <!-- Pricing cards -->
   <div class="text-center mb-12">
     <h3 class="font-display text-3xl font-light text-navy">Pricing</h3>
@@ -415,6 +421,7 @@
 
 </section>
 
+<!-- STREAMING_CHUNK:Setting up Sports Section -->
 <!-- ─────────────────────────────────────────
      SPORTS PHOTOGRAPHY & VIDEOGRAPHY
 ───────────────────────────────────────── -->
@@ -501,6 +508,7 @@
       </div>
     </div>
 
+<!-- STREAMING_CHUNK:Configuring Crew Sports Section -->
     <!-- Crew -->
     <div class="mb-16">
       <div class="flex items-center gap-4 mb-10">
@@ -581,6 +589,7 @@
   </div>
 </section>
 
+<!-- STREAMING_CHUNK:Building Booking and Contact Form -->
 <!-- ─────────────────────────────────────────
      BOOKING & CONTACT
 ───────────────────────────────────────── -->
@@ -685,7 +694,7 @@
   </div>
 </section>
 
-
+<!-- STREAMING_CHUNK:Constructing the Footer -->
 <!-- ─────────────────────────────────────────
      FOOTER
 ───────────────────────────────────────── -->
@@ -745,7 +754,7 @@
   </div>
 </footer>
 
-
+<!-- STREAMING_CHUNK:Initializing JavaScript for Interactivity -->
 <!-- ─────────────────────────────────────────
      JAVASCRIPT
 ───────────────────────────────────────── -->
@@ -853,4 +862,3 @@
 
 </body>
 </html>
-```eof
