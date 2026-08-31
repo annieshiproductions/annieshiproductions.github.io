@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Annie Shi Productions</title>
+  <title>Annie Shi Productions | Senior Portraits</title>
   
   <!-- Custom Favicon -->
   <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczMHkEaqd9NcOBHxkyabCUeMmXyMNrXOvHOnEd5B7RMuiuaZeIguW4TUjXWnLruWMFruUR0CONMQoN8EPiAE4GjOPrId3cIN37jL6RUk-r-8JdiItOoXUhDFQb2rHwaDTXnxj7gfU4B48cnLeQ_onkSr=w1556-h1556-s-no-gm?authuser=3">
@@ -16,7 +16,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- STREAMING_CHUNK:Configuring Tailwind Theme -->
   <script>
     tailwind.config = {
       theme: {
@@ -37,7 +36,6 @@
     }
   </script>
 
-  <!-- STREAMING_CHUNK:Defining Custom CSS Styles -->
   <style>
     html { scroll-behavior: smooth; }
 
@@ -98,12 +96,6 @@
       background: linear-gradient(180deg, #0D2137 0%, #1B3A5C 100%);
     }
 
-    /* Video embed placeholder */
-    .video-placeholder {
-      background: linear-gradient(135deg, #1B3A5C 0%, #0D2137 100%);
-      aspect-ratio: 16/9;
-    }
-
     /* Photo grid/carousel hover */
     .photo-thumb {
       background: linear-gradient(135deg, #B8D9F0, #5B9EC9);
@@ -139,11 +131,15 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+    
+    /* Scroll margin for sticky nav */
+    .scroll-mt-24 {
+      scroll-margin-top: 6rem;
+    }
   </style>
 </head>
 <body class="antialiased">
 
-<!-- STREAMING_CHUNK:Building Navigation Bar -->
 <!-- ─────────────────────────────────────────
      NAVIGATION
 ───────────────────────────────────────── -->
@@ -157,10 +153,10 @@
 
     <!-- Desktop links -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="#home"    class="nav-link">Home</a>
-      <a href="#senior"  class="nav-link">Senior Portraits</a>
-      <a href="#sports"  class="nav-link">Sports</a>
-      <a href="#booking" class="nav-link px-4 py-2 bg-navy text-sky rounded-sm hover:bg-mid-blue" style="letter-spacing:0.1em;">Book a Session</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#pricing"   class="nav-link">Pricing</a>
+      <a href="#booking"   class="nav-link px-4 py-2 bg-navy text-sky rounded-sm hover:bg-mid-blue" style="letter-spacing:0.1em;">Book a Session</a>
+      <a href="#sports"    class="nav-link text-navy/60 hover:text-navy">Sports</a>
     </div>
 
     <!-- Hamburger -->
@@ -174,18 +170,17 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden bg-sky border-t border-baby-blue/40">
     <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-5">
-      <a href="#home"    class="nav-link" onclick="closeMobileMenu()">Home</a>
-      <a href="#senior"  class="nav-link" onclick="closeMobileMenu()">Senior Portraits</a>
-      <a href="#sports"  class="nav-link" onclick="closeMobileMenu()">Sports</a>
-      <a href="#booking" class="nav-link" onclick="closeMobileMenu()">Book a Session</a>
+      <a href="#portfolio" class="nav-link" onclick="closeMobileMenu()">Portfolio</a>
+      <a href="#pricing"   class="nav-link" onclick="closeMobileMenu()">Pricing</a>
+      <a href="#booking"   class="nav-link" onclick="closeMobileMenu()">Book a Session</a>
+      <a href="#sports"    class="nav-link text-navy/60" onclick="closeMobileMenu()">Sports</a>
     </div>
   </div>
 </nav>
 
 
-<!-- STREAMING_CHUNK:Rendering Hero Section with Mobile Adjustments -->
 <!-- ─────────────────────────────────────────
-     HERO
+     HERO (SENIOR PORTRAIT FOCUSED)
 ───────────────────────────────────────── -->
 <section id="home" class="relative min-h-[90vh] md:min-h-screen flex items-center justify-center md:justify-start pt-16 overflow-hidden bg-gradient-to-br from-sky via-[#F2F8FC] to-baby-blue md:bg-none">
   
@@ -205,25 +200,23 @@
       <span class="font-medium">Productions</span>
     </h1>
     
-    <p class="font-display text-xl md:text-2xl italic text-navy mb-10">Photography &amp; Videography</p>
+    <p class="font-display text-xl md:text-2xl italic text-navy mb-10">Senior Portraits</p>
     
     <div class="flex flex-col gap-4">
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#senior" class="flex-1 bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 md:backdrop-blur-sm text-center">Senior Portraits</a>
-        <a href="#sports" class="flex-1 bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 md:backdrop-blur-sm text-center">Sports</a>
-      </div>
-      <a href="#booking" class="block w-full border-2 border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-navy hover:text-sky transition-colors duration-300 bg-transparent md:bg-white/40 md:backdrop-blur-sm text-center">Book a Session</a>
+      <a href="#booking" class="block w-full border-2 border-navy bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-mid-blue transition-colors duration-300 text-center">
+        Book Your Session
+      </a>
+      <a href="#portfolio" class="block w-full border-2 border-navy text-navy text-xs tracking-[0.15em] uppercase font-medium px-6 py-4 hover:bg-navy hover:text-sky transition-colors duration-300 bg-transparent md:bg-white/40 md:backdrop-blur-sm text-center">
+        View Portfolio
+      </a>
     </div>
   </div>
-
 </section>
 
-
-<!-- STREAMING_CHUNK:Constructing Senior Portraits Section with Carousel -->
 <!-- ─────────────────────────────────────────
-     SENIOR PORTRAITS
+     PORTFOLIO (IMMEDIATE VISUAL PROOF)
 ───────────────────────────────────────── -->
-<section id="senior" class="py-24 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden">
+<section id="portfolio" class="pt-24 pb-12 px-6 md:px-16 max-w-6xl mx-auto overflow-hidden scroll-mt-24">
 
   <!-- Section header -->
   <div class="mb-16 text-center">
@@ -231,18 +224,15 @@
     <div class="rule-title max-w-lg mx-auto">
       <h2 class="font-display text-4xl md:text-5xl font-light text-navy whitespace-nowrap px-4">Senior Portraits</h2>
     </div>
-    <p class="font-sans text-sm font-light text-navy/60 mt-5 max-w-md mx-auto leading-relaxed">
-      Celebrate your final year of high school!
-    </p>
   </div>
 
   <!-- Swipeable Photo Gallery -->
-  <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 mb-12 no-scrollbar md:-mx-16 md:px-16 -mx-6 px-6">
+  <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-8 no-scrollbar md:-mx-16 md:px-16 -mx-6 px-6">
 
     <!-- Photo 1 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczOhbL243bcIIOBBqaSEHEJR8G3CxibPBTzTgl5DmHgcq2xY1AQclJ_NC5EJPZnjp29_ydqN3zErsqySrzE30jHWaEG9BNiKAee-k7MFlP65umDjYhP0HqRxUzDTpeasOfIdsdlxHVsd_JsXXM53Y1vI=w1168-h1556-s-no-gm?authuser=3"
+        src="https://lh3.googleusercontent.com/pw/AP1GczPd4jPoGvaNwksknV0F47nqGMp6Zn5iZRakHZmUNbIwAfdzOlbaV8jKsZVxxQb4ofywVXoSXdJ9eIzl8P9O0pktS_dmwTem4nEzr5c8HVyF5A3tiNSsAEw2ffDgsHeLbgqpEhEOiI35l08HRUn7NjPA=w992-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -251,7 +241,7 @@
     <!-- Photo 2 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczMQV82CqO_JuzgJVX64S63IxVVGHNv70ZHAaSPVxapey71vnCKay75jMEq2czvzNIlg0dkzFeBttmKGyGWksCIkPF94dzA62beg5KmwdBFtQd3b0YSo9PXqcNnQhpz0JDwrlH3EqUYzePysuvutnhyW=w1200"
+        src="https://lh3.googleusercontent.com/pw/AP1GczMtpeJ30_nYroKGuF8d8r4HFhkL2g3XVUA7a4eFrIKwAOEJmgtNlr5If8ELNRiOTE0tmXWHsrysVqL959UVbbJK1aBD20yHk3jGkp2PaEkNmDLKufEfqIgDPJYzYN5tnDvxjaj_Ao43uwqGLwG-rIv_=w994-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -260,7 +250,7 @@
     <!-- Photo 3 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczNDcKnmtW08MY2-BHSMg_vufGxek7_q6lrLt-RRTLuPKtCedQFj7Z3nvqTaUzMF5o24VyMQmEqe6AVzQbqZQWAURIfZuML4k2fGmJgEazA7BmG8Mu5Y-9FT7C0rtoBAho5Uj_LSolQQmZiJGsDWEAVT=w800"
+        src="https://lh3.googleusercontent.com/pw/AP1GczOAohCXEjnS0Q8n1VGsAW-hHlUwB4D7rK179NMdt-UwwOuUhlbZh-sZdb-f9q8vENxcynyVWRY_bgJDFz4QQkKus1IeyNeaF561HvEh00ASQHtoIX4O0NfahIpcx78hqSb04Mb408sWi-WneCHJYGjp=w994-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -269,7 +259,7 @@
     <!-- Photo 4 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczPjqu_7AD3c6NXmxohgo8J9xeyRfwtuOSLFieOzNKg3yfSv8H9VSVAnFhB66IojZr-8RACXe-rHe61hwOD6yPT_Jn0lmbvq_3qcdDI1wobAjTF7CU1L0roDJJmbJnLjwUjqCUlWCYyqrdBjGUkeQ6ZY=w800"
+        src="https://lh3.googleusercontent.com/pw/AP1GczNTokz64o5wZDvFR2M5BpDzW9I4lTmkzOCIVhuOxGLjrPCNsdO3YdJaWW_3MGI3n__SQ1eChOPGaU8y8AdJhhKyW0vFM4Xa-JQAREDoVQMltfwbhBe0mQA1nw3i2Px_N5xl5nNBiL5dq7rfc1D1ABt3=w994-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -278,7 +268,7 @@
     <!-- Photo 5 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczOAohCXEjnS0Q8n1VGsAW-hHlUwB4D7rK179NMdt-UwwOuUhlbZh-sZdb-f9q8vENxcynyVWRY_bgJDFz4QQkKus1IeyNeaF561HvEh00ASQHtoIX4O0NfahIpcx78hqSb04Mb408sWi-WneCHJYGjp=w1168-h1556-s-no-gm?authuser=3"
+        src="https://lh3.googleusercontent.com/pw/AP1GczM-Ogywo7I4uebJ_HNzOfqmK2sY6uMSOawJwYGpY_RP2XzXqY4oXeadxKVoAQcKryTVBDv7A6h28gsY2F4DUQF9Kuuw8YN6ZuWWChtrtBRtGNxszP61NcDt1T25DIPsj3mHnWI75eXYVN4JzoOoEFlO=w994-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -287,7 +277,7 @@
     <!-- Photo 6 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczNaqgQLOPjS0Ai8nRpLPIHJSnTOKWfz9vTdZv5ikTgzO1nYw5kRZklsXEKTEC8S3TZmQj_f4nXznbZM_PQWYEBOF9BmaJZi0-Xv8dtkSJm_y4-fAX-Z8xHn8f_VFqvtfFWyy4nBuXZSLq7iWc8K70rv=w1200"
+        src="https://lh3.googleusercontent.com/pw/AP1GczNrd3znp-D_45OSf_mdAcMy5t3dTfYT-IZ3b13m992P2YdxQunPWr3e-YnA1cQ5DbpALNY9QvX20nUqGDcVxyYGbzIFoWxORmLWsGV6BB1JNLcScMRZ3P-b9KyO0Th39g8A2IkyCEnP3J0V0dxknzED=w992-h1324-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -296,7 +286,25 @@
     <!-- Photo 7 -->
     <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
       <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczObpKpukzXJDAQ2S8Be1I-6gbhHeH-qcf8LFWAq_2IGUuwMg_gyTwgwPlG0u2Ii6CSYNugrYTqQ6ZEfWgAeTNgI4pKCFitkJGoCZXDP0JvasxgmP8KT3w2LJB6zdyc0ZYdOtoXHdJFPTq4HDxNGno3k=w800"
+        src="https://lh3.googleusercontent.com/pw/AP1GczPzpmm6yXEGiTMIoumS-WyeNeKiG7dkfRZ479ekDelAU0Oz0JmIJJVS2c8cdUo2C9OqD7kf6wFeqGigGbDvAnqnzG_zKH-LMk667Ljoj04JkraQRNimP6bzNIM71TrhRhz98n01DPvE4TbBaZgMbgWQ=w1168-h1556-s-no-gm?authuser=3"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 8 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczPDn_IdmyL_zqCtyw02Qo_7M_6fhEGU8FPxxYhCkeLKfshLwzBFTkwxs4cf1frDdAiRUgdLVWMWU48qBE8vMilt_GDtQ9gihoLlYOukJql-BHTo_QOb6jJGKLLYgzhDJjiGI-FzGvfQIO5i_uYx2K5F=w1168-h1556-s-no-gm?authuser=3"
+        alt="Senior portrait session"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Photo 9 -->
+    <div class="snap-center shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%] aspect-[3/4] photo-thumb rounded-sm overflow-hidden">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczOdccbYZYFoAv6beXJWRgh2CZb3yGDzNt8qxgOz0WnnQ-1nGlP0fR3Ej7kjiz_wQ1K0J-u_c_1kl-Q0OlcnTAKoNTyd6dQtH6pIG0zdrUdAWdtxOv2QNH5IfTj0pVDzrsXA_mrM32-EmpDVBFmX3Z34=w1168-h1556-s-no-gm?authuser=3"
         alt="Senior portrait session"
         class="w-full h-full object-cover"
       />
@@ -304,15 +312,23 @@
 
   </div>
   
-  <p class="text-center font-sans text-xs text-navy/40 mb-16 md:hidden">Swipe to see more &rarr;</p>
+  <p class="text-center font-sans text-xs text-navy/40 md:hidden">Swipe to see more &rarr;</p>
 
-<!-- STREAMING_CHUNK:Laying out Pricing Cards with Dollar Signs -->
-  <!-- Pricing cards -->
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     ELEVATED PRICING
+───────────────────────────────────────── -->
+<section id="pricing" class="pt-0 pb-0 px-6 md:px-16 max-w-6xl mx-auto scroll-mt-24">
+  
   <div class="text-center mb-12">
-    <h3 class="font-display text-3xl font-light text-navy">Pricing</h3>
+    <div class="rule-title max-w-sm mx-auto mb-4">
+      <h3 class="font-display text-3xl font-light text-navy px-4">Packages &amp; Pricing</h3>
+    </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0">
 
     <!-- Mini -->
     <div class="price-card bg-white/70 border border-baby-blue/50 rounded-sm p-8 flex flex-col">
@@ -327,11 +343,11 @@
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Online gallery access</li>
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Available within 3 days</li>
       </ul>
-      <a href="#booking" class="block text-center text-xs tracking-[0.15em] uppercase font-medium border border-navy text-navy py-3 hover:bg-navy hover:text-sky transition-colors duration-300">Book Mini</a>
+      <a href="#booking" onclick="preselectSession('mini')" class="block text-center text-xs tracking-[0.15em] uppercase font-medium border border-navy text-navy py-3 hover:bg-navy hover:text-sky transition-colors duration-300">Book Mini</a>
     </div>
 
     <!-- Basic — featured -->
-    <div class="price-card bg-navy border border-navy rounded-sm p-8 flex flex-col relative">
+    <div class="price-card bg-navy border border-navy rounded-sm p-8 flex flex-col relative shadow-xl">
       <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-mid-blue text-sky text-xs tracking-[0.15em] uppercase px-4 py-1 font-medium">Popular</div>
       <div class="mb-6">
         <p class="font-sans text-xs tracking-[0.25em] uppercase text-baby-blue mb-1">Basic</p>
@@ -344,7 +360,7 @@
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>Online gallery access</li>
         <li class="flex items-start gap-2"><span class="text-mid-blue mt-0.5">—</span>Available within 3 days</li>
       </ul>
-      <a href="#booking" class="block text-center text-xs tracking-[0.15em] uppercase font-medium bg-sky text-navy py-3 hover:bg-baby-blue transition-colors duration-300">Book Basic</a>
+      <a href="#booking" onclick="preselectSession('basic')" class="block text-center text-xs tracking-[0.15em] uppercase font-medium bg-sky text-navy py-3 hover:bg-baby-blue transition-colors duration-300">Book Basic</a>
     </div>
 
     <!-- Duo -->
@@ -360,77 +376,144 @@
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Online gallery access</li>
         <li class="flex items-start gap-2"><span class="text-baby-blue mt-0.5">—</span>Available within 3 days</li>
       </ul>
-      <a href="#booking" class="block text-center text-xs tracking-[0.15em] uppercase font-medium border border-navy text-navy py-3 hover:bg-navy hover:text-sky transition-colors duration-300">Book Duo</a>
-    </div>
-
-  </div>
-
-  <!-- Locations + Timing -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/50 border border-baby-blue/40 rounded-sm p-10">
-
-    <!-- Locations -->
-    <div>
-      <p class="font-sans text-xs tracking-[0.3em] uppercase text-mid-blue mb-5">Where we'll shoot</p>
-      <h4 class="font-display text-2xl font-light text-navy mb-6">Locations</h4>
-      <p class="font-sans text-xs text-navy/60 leading-relaxed mb-6">
-        I can do sessions within a 30-minute biking distance of Brookline High School. If transportation is provided, I'm happy to travel further. Please reach out with any specific requests!
-      </p>
-
-      <div class="grid grid-cols-2 gap-6">
-        <div>
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-mid-blue mb-3">Nature</p>
-          <ul class="font-sans text-xs text-navy/70 space-y-2">
-            <li>Larz Anderson Park</li>
-            <li>Arnold Arboretum</li>
-            <li>Charles River</li>
-            <li>Griggs Park</li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-sans text-xs tracking-[0.2em] uppercase text-mid-blue mb-3">City</p>
-          <ul class="font-sans text-xs text-navy/70 space-y-2">
-            <li>Boston Public Garden</li>
-            <li>Beacon Hill</li>
-            <li>Copley Square</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Timing -->
-    <div class="border-t md:border-t-0 md:border-l border-baby-blue/40 md:pl-12 pt-8 md:pt-0">
-      <p class="font-sans text-xs tracking-[0.3em] uppercase text-mid-blue mb-5">When to shoot</p>
-      <h4 class="font-display text-2xl font-light text-navy mb-6">Timing</h4>
-      <ul class="font-sans text-sm text-navy/70 space-y-4">
-        <li class="flex gap-3 items-start">
-          <span class="text-mid-blue text-lg leading-none mt-0.5">☀</span>
-          <span><strong class="font-medium text-navy">Any natural light</strong> works great, from morning through evening.</span>
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-mid-blue text-lg leading-none mt-0.5">🌅</span>
-          <span><strong class="font-medium text-navy">Early morning or late afternoon</strong> gives golden, soft light that's perfect for portraits.</span>
-        </li>
-        <li class="flex gap-3 items-start">
-          <span class="text-mid-blue text-lg leading-none mt-0.5">📅</span>
-          <span><strong class="font-medium text-navy">Weekdays</strong> mean fewer crowds at popular spots.</span>
-        </li>
-      </ul>
+      <a href="#booking" onclick="preselectSession('duo')" class="block text-center text-xs tracking-[0.15em] uppercase font-medium border border-navy text-navy py-3 hover:bg-navy hover:text-sky transition-colors duration-300">Book Duo</a>
     </div>
 
   </div>
 
 </section>
 
-<!-- STREAMING_CHUNK:Setting up Sports Section -->
+
 <!-- ─────────────────────────────────────────
-     SPORTS PHOTOGRAPHY & VIDEOGRAPHY
+     BOOKING & CONTACT (ELEVATED)
 ───────────────────────────────────────── -->
-<section id="sports" class="sports-section py-24 px-6 md:px-16">
+<section id="booking" class="pt-16 pb-24 px-6 md:px-16 max-w-6xl mx-auto scroll-mt-24">
+
+  <div class="mb-14 text-center">
+    <p class="font-sans text-xs tracking-[0.3em] uppercase text-mid-blue mb-4">Let's work together</p>
+    <div class="rule-title max-w-md mx-auto">
+      <h2 class="font-display text-4xl md:text-5xl font-light text-navy px-4 whitespace-nowrap">Book a Session</h2>
+    </div>
+    <p class="font-sans text-sm font-light text-navy/60 mt-5 max-w-sm mx-auto leading-relaxed">
+      Fill out the form and I'll get back to you within 24 hours to confirm details.
+    </p>
+  </div>
+
+  <div class="max-w-2xl mx-auto">
+    <!-- FORM: powered by Formspree -->
+    <form
+      id="booking-form"
+      action="https://formspree.io/f/xgojlwnk"
+      method="POST"
+      class="space-y-6"
+      onsubmit="handleFormSubmit(event)"
+    >
+      <input type="hidden" name="_replyto" value="annieshiproductions@gmail.com" />
+      <input type="hidden" name="_subject" value="New Booking Request — Annie Shi Productions" />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <div>
+          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Name <span class="text-mid-blue">*</span></label>
+          <input type="text" name="name" required
+            placeholder="Your full name"
+            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
+        </div>
+
+        <div>
+          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Phone Number <span class="text-mid-blue">*</span></label>
+          <input type="tel" name="phone" required
+            placeholder="(555) 123-4567"
+            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <div>
+          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Session Type</label>
+          <!-- Added ID for JS targeting -->
+          <select name="session_type" id="session_type"
+            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy transition-all duration-200 appearance-none cursor-pointer">
+            <option value="">Select a session…</option>
+            <option value="mini">Senior Portrait — Mini ($30)</option>
+            <option value="basic">Senior Portrait — Basic ($50)</option>
+            <option value="duo">Senior Portrait — Duo ($75)</option>
+            <option value="basketball">Sports — Basketball</option>
+            <option value="crew">Sports — Crew</option>
+            <option value="other">Other / Not sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Preferred Date</label>
+          <input type="date" name="preferred_date"
+            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy transition-all duration-200" />
+        </div>
+
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-0">Preferred Location</label>
+          <div class="group relative flex items-center justify-center cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-mid-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-deep-navy text-sky text-xs rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 pointer-events-none text-center font-sans font-light leading-relaxed">
+              Brookline/Greater Boston area. 
+              <br/><br/>
+              Recommended: Larz Anderson, Arnold Arboretum, Charles River Esplanade, Boston Public Garden, Beacon Hill, Copley Square. 
+              <br/><br/>
+              <span class="italic text-baby-blue">Pro tip: Golden hour or morning light is best!</span>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-deep-navy"></div>
+            </div>
+          </div>
+        </div>
+        <input type="text" name="location"
+          placeholder="e.g. Arnold Arboretum, Boston Public Garden…"
+          class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
+      </div>
+
+      <div>
+        <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Message</label>
+        <textarea name="message" rows="5"
+          placeholder="Tell me a little about what you're envisioning, any questions, or special requests…"
+          class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200 resize-none"></textarea>
+      </div>
+
+      <!-- Success / error messages -->
+      <div id="form-success" class="hidden text-center py-4 bg-baby-blue/30 border border-baby-blue rounded-sm">
+        <p class="font-display italic text-navy text-lg">Thank you! I'll be in touch soon.</p>
+      </div>
+      <div id="form-error" class="hidden text-center py-4 bg-red-50 border border-red-200 rounded-sm">
+        <p class="font-sans text-sm text-red-600">Something went wrong. Please email me directly at <a href="mailto:annieshiproductions@gmail.com" class="underline">annieshiproductions@gmail.com</a>.</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
+        <p class="font-sans text-xs text-navy/40">Or reach me at <a href="mailto:annieshiproductions@gmail.com" class="text-mid-blue hover:underline">annieshiproductions@gmail.com</a></p>
+        <button type="submit" id="submit-btn"
+          class="bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-10 py-4 hover:bg-mid-blue transition-colors duration-300 flex items-center gap-3">
+          <span id="btn-text">Send Request</span>
+          <span id="btn-spinner" class="hidden animate-spin w-3 h-3 border border-sky border-t-transparent rounded-full"></span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     SPORTS (RELOCATED TO BOTTOM)
+───────────────────────────────────────── -->
+<section id="sports" class="sports-section py-24 px-6 md:px-16 scroll-mt-24">
   <div class="max-w-6xl mx-auto">
 
     <!-- Section header -->
     <div class="mb-16 text-center">
-      <p class="font-sans text-xs tracking-[0.3em] uppercase text-baby-blue/60 mb-4">Annie Shi Productions</p>
+      <p class="font-sans text-xs tracking-[0.3em] uppercase text-baby-blue/60 mb-4">Also available for</p>
       <div class="flex items-center gap-4 justify-center mb-4">
         <div class="flex-1 max-w-32 h-px bg-mid-blue/30"></div>
         <h2 class="font-display text-4xl md:text-5xl font-light text-sky whitespace-nowrap">Sports</h2>
@@ -452,7 +535,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
-        <!-- Basketball highlight reel (vertical 9:16) -->
+        <!-- Basketball highlight reel -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Highlight Reel</p>
           <div class="flex justify-center">
@@ -470,7 +553,7 @@
           </div>
         </div>
 
-        <!-- Basketball photos (4x, landscape 4:3) -->
+        <!-- Basketball photos -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Photos</p>
           <div class="grid grid-cols-2 gap-2">
@@ -508,7 +591,6 @@
       </div>
     </div>
 
-<!-- STREAMING_CHUNK:Configuring Crew Sports Section -->
     <!-- Crew -->
     <div class="mb-16">
       <div class="flex items-center gap-4 mb-10">
@@ -519,7 +601,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
-        <!-- Crew highlight reel (vertical 9:16) -->
+        <!-- Crew highlight reel -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">On the Water</p>
           <div class="flex justify-center">
@@ -537,7 +619,7 @@
           </div>
         </div>
 
-        <!-- Crew photos (4x, landscape 4:3) -->
+        <!-- Crew photos -->
         <div>
           <p class="font-sans text-xs tracking-[0.2em] uppercase text-baby-blue/60 mb-3">Photos</p>
           <div class="grid grid-cols-2 gap-2">
@@ -581,7 +663,7 @@
       <p class="font-sans text-sm text-sky/60 leading-relaxed mb-6">
         Sports photography and videography pricing varies by scope, duration, and deliverables. I'd love to chat about what you're looking for.
       </p>
-      <a href="#booking" class="inline-block text-xs tracking-[0.15em] uppercase font-medium border border-baby-blue/60 text-baby-blue px-8 py-3 hover:bg-mid-blue hover:border-mid-blue hover:text-sky transition-colors duration-300">
+      <a href="#booking" onclick="preselectSession('other')" class="inline-block text-xs tracking-[0.15em] uppercase font-medium border border-baby-blue/60 text-baby-blue px-8 py-3 hover:bg-mid-blue hover:border-mid-blue hover:text-sky transition-colors duration-300">
         Get in Touch
       </a>
     </div>
@@ -589,112 +671,6 @@
   </div>
 </section>
 
-<!-- STREAMING_CHUNK:Building Booking and Contact Form -->
-<!-- ─────────────────────────────────────────
-     BOOKING & CONTACT
-───────────────────────────────────────── -->
-<section id="booking" class="py-24 px-6 md:px-16 max-w-6xl mx-auto">
-
-  <div class="mb-14 text-center">
-    <p class="font-sans text-xs tracking-[0.3em] uppercase text-mid-blue mb-4">Let's work together</p>
-    <div class="rule-title max-w-md mx-auto">
-      <h2 class="font-display text-4xl md:text-5xl font-light text-navy px-4 whitespace-nowrap">Book a Session</h2>
-    </div>
-    <p class="font-sans text-sm font-light text-navy/60 mt-5 max-w-sm mx-auto leading-relaxed">
-      Fill out the form and I'll get back to you within 48 hours to confirm details.
-    </p>
-  </div>
-
-  <div class="max-w-2xl mx-auto">
-    <!-- FORM: powered by Formspree -->
-    <form
-      id="booking-form"
-      action="https://formspree.io/f/xgojlwnk"
-      method="POST"
-      class="space-y-6"
-      onsubmit="handleFormSubmit(event)"
-    >
-      <input type="hidden" name="_replyto" value="annieshifiles@gmail.com" />
-      <input type="hidden" name="_subject" value="New Booking Request — Annie Shi Productions" />
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-        <div>
-          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Name <span class="text-mid-blue">*</span></label>
-          <input type="text" name="name" required
-            placeholder="Your full name"
-            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
-        </div>
-
-        <div>
-          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Email <span class="text-mid-blue">*</span></label>
-          <input type="email" name="email" required
-            placeholder="your@email.com"
-            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
-        </div>
-
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-        <div>
-          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Session Type</label>
-          <select name="session_type"
-            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy transition-all duration-200 appearance-none cursor-pointer">
-            <option value="">Select a session…</option>
-            <option value="mini">Senior Portrait — Mini ($30)</option>
-            <option value="basic">Senior Portrait — Basic ($50)</option>
-            <option value="duo">Senior Portrait — Duo ($75)</option>
-            <option value="basketball">Sports — Basketball</option>
-            <option value="crew">Sports — Crew</option>
-            <option value="other">Other / Not sure</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Preferred Date</label>
-          <input type="date" name="preferred_date"
-            class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy transition-all duration-200" />
-        </div>
-
-      </div>
-
-      <div>
-        <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Preferred Location</label>
-        <input type="text" name="location"
-          placeholder="e.g. Arnold Arboretum, Boston Public Garden…"
-          class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200" />
-      </div>
-
-      <div>
-        <label class="block font-sans text-xs tracking-[0.2em] uppercase text-navy/60 mb-2">Message</label>
-        <textarea name="message" rows="5"
-          placeholder="Tell me a little about what you're envisioning, any questions, or special requests…"
-          class="form-input w-full bg-white/60 border border-baby-blue/50 rounded-sm px-4 py-3 font-sans text-sm text-navy placeholder-navy/30 transition-all duration-200 resize-none"></textarea>
-      </div>
-
-      <!-- Success / error messages -->
-      <div id="form-success" class="hidden text-center py-4 bg-baby-blue/30 border border-baby-blue rounded-sm">
-        <p class="font-display italic text-navy text-lg">Thank you! I'll be in touch soon.</p>
-      </div>
-      <div id="form-error" class="hidden text-center py-4 bg-red-50 border border-red-200 rounded-sm">
-        <p class="font-sans text-sm text-red-600">Something went wrong. Please email me directly at <a href="mailto:annieshifiles@gmail.com" class="underline">annieshifiles@gmail.com</a>.</p>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
-        <p class="font-sans text-xs text-navy/40">Or reach me at <a href="mailto:annieshifiles@gmail.com" class="text-mid-blue hover:underline">annieshifiles@gmail.com</a></p>
-        <button type="submit" id="submit-btn"
-          class="bg-navy text-sky text-xs tracking-[0.15em] uppercase font-medium px-10 py-4 hover:bg-mid-blue transition-colors duration-300 flex items-center gap-3">
-          <span id="btn-text">Send Request</span>
-          <span id="btn-spinner" class="hidden animate-spin w-3 h-3 border border-sky border-t-transparent rounded-full"></span>
-        </button>
-      </div>
-
-    </form>
-  </div>
-</section>
-
-<!-- STREAMING_CHUNK:Constructing the Footer -->
 <!-- ─────────────────────────────────────────
      FOOTER
 ───────────────────────────────────────── -->
@@ -717,10 +693,11 @@
       <div>
         <p class="font-sans text-xs tracking-[0.25em] uppercase text-baby-blue/60 mb-4">Navigate</p>
         <ul class="font-sans text-xs space-y-3 text-sky/50">
-          <li><a href="#home"    class="hover:text-baby-blue transition-colors">Home</a></li>
-          <li><a href="#senior"  class="hover:text-baby-blue transition-colors">Senior Portraits</a></li>
-          <li><a href="#sports"  class="hover:text-baby-blue transition-colors">Sports Photography</a></li>
-          <li><a href="#booking" class="hover:text-baby-blue transition-colors">Book a Session</a></li>
+          <li><a href="#home"      class="hover:text-baby-blue transition-colors">Home</a></li>
+          <li><a href="#portfolio" class="hover:text-baby-blue transition-colors">Senior Portraits</a></li>
+          <li><a href="#pricing"   class="hover:text-baby-blue transition-colors">Pricing</a></li>
+          <li><a href="#sports"    class="hover:text-baby-blue transition-colors">Sports Photography</a></li>
+          <li><a href="#booking"   class="hover:text-baby-blue transition-colors">Book a Session</a></li>
         </ul>
       </div>
 
@@ -729,7 +706,7 @@
         <p class="font-sans text-xs tracking-[0.25em] uppercase text-baby-blue/60 mb-4">Contact</p>
         <ul class="font-sans text-xs space-y-3 text-sky/50">
           <li>
-            <a href="mailto:annieshifiles@gmail.com" class="hover:text-baby-blue transition-colors">annieshifiles@gmail.com</a>
+            <a href="mailto:annieshiproductions@gmail.com" class="hover:text-baby-blue transition-colors">annieshiproductions@gmail.com</a>
           </li>
           <li>
             <a href="https://instagram.com/annieshiproductions" target="_blank" class="hover:text-baby-blue transition-colors flex items-center gap-2">
@@ -754,11 +731,18 @@
   </div>
 </footer>
 
-<!-- STREAMING_CHUNK:Initializing JavaScript for Interactivity -->
 <!-- ─────────────────────────────────────────
      JAVASCRIPT
 ───────────────────────────────────────── -->
 <script>
+  // ── Pre-select Session Logic ──
+  function preselectSession(sessionValue) {
+    const sessionSelect = document.getElementById('session_type');
+    if (sessionSelect) {
+      sessionSelect.value = sessionValue;
+    }
+  }
+
   // ── Mobile menu toggle ──
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
