@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taylor's Senior Portraits | Sneak Peek | Annie Shi Productions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-navy: #223859;
+      --navy-hover: #172840;
+      --bg-light: #EFF5F9;
+      --card-bg: #FFFFFF;
+      --text-main: #111111;
+      --text-muted: #6B7280;
+      --border-color: #E2E8F0;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #FAFCFE;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .announcement-bar {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-navy);
+    }
+
+    .gallery-header {
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border-color);
+      padding: 64px 24px 50px;
+      text-align: center;
+    }
+
+    .gallery-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .sneak-peek-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      margin-bottom: 16px;
+    }
+
+    .gallery-title {
+      font-family: var(--font-serif);
+      font-size: 46px;
+      font-weight: 400;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .gallery-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .gallery-meta {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .callout-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 0 auto 28px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 620px;
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 26px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--navy-hover);
+      border-color: var(--navy-hover);
+    }
+
+    .btn-outline {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-navy);
+    }
+
+    .gallery-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .gallery-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .photo-grid {
+      column-count: 2;
+      column-gap: 24px;
+    }
+
+    @media (max-width: 700px) {
+      .photo-grid {
+        column-count: 1;
+      }
+      .gallery-title {
+        font-size: 34px;
+      }
+    }
+
+    .photo-card {
+      break-inside: avoid;
+      margin-bottom: 24px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(34, 56, 89, 0.12);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: var(--bg-light);
+    }
+
+    .photo-card .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(34, 56, 89, 0.75) 0%, rgba(34, 56, 89, 0) 40%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 16px;
+      color: #FFFFFF;
+    }
+
+    .photo-card:hover .card-overlay {
+      opacity: 1;
+    }
+
+    .card-filename {
+      font-size: 13px;
+      letter-spacing: 0.05em;
+    }
+
+    .card-quick-download {
+      color: #FFFFFF;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: background 0.2s ease;
+    }
+
+    .card-quick-download:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(17, 24, 39, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #FFFFFF;
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+
+    .lightbox-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      letter-spacing: 0.05em;
+    }
+
+    .lightbox-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .lightbox-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lightbox-img-container {
+      max-width: 85vw;
+      max-height: 80vh;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+
+    .nav-arrow {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #FFFFFF;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .lightbox-footer {
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 12px;
+      padding-top: 10px;
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    Session Sneak Peek &bull; Annie Shi Productions
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="https://annieshiproductions.github.io/" class="brand-logo">
+        Annie Shi <span>Productions</span>
+      </a>
+      <div class="nav-right">
+        <a href="https://annieshiproductions.github.io/" class="nav-link">Main Website</a>
+        <a id="btn-download-all" href="https://drive.google.com/drive/folders/1ZD7e9dj6FKb1hHztdqjk7oYJIjgbO3hw" target="_blank" rel="noopener" class="btn btn-primary">
+          Download Previews
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="gallery-header">
+    <div class="gallery-header-inner">
+      <div class="sneak-peek-badge">
+        <span>&#10022;</span> Early Access Sneak Peek
+      </div>
+      <h1 class="gallery-title">Taylor's <em>Sneak Peek</em></h1>
+      <p class="gallery-meta">Class of 2027 Senior Portraits &bull; 6 Early Favorites</p>
+      
+      <div class="callout-box">
+        Here is a quick first look at a few favorite shots from our session. Your complete collection is being carefully edited and will be delivered shortly. Feel free to download, share, and enjoy these initial portraits.
+      </div>
+
+      <div class="action-row">
+        <a href="https://drive.google.com/drive/folders/1ZD7e9dj6FKb1hHztdqjk7oYJIjgbO3hw" target="_blank" rel="noopener" class="btn btn-primary">
+          Open Drive Folder
+        </a>
+        <a href="https://annieshiproductions.github.io/" class="btn btn-outline">
+          Back to Main Site
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="gallery-section">
+    <div class="gallery-stats">
+      <span>Showing 6 sneak peek photographs</span>
+      <span>Click any photograph to view high resolution or download</span>
+    </div>
+
+    <div class="photo-grid" id="photo-grid"></div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-toolbar">
+      <span class="lightbox-title" id="lb-title">Photo Preview</span>
+      <div class="lightbox-controls">
+        <a id="lb-download-btn" href="#" target="_blank" class="icon-btn" download>Download File</a>
+        <button class="icon-btn" onclick="closeLightbox()">Close (&times;)</button>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <button class="nav-arrow" onclick="prevPhoto()" aria-label="Previous Photo">&#8249;</button>
+      <div class="lightbox-img-container">
+        <img src="" alt="" class="lightbox-img" id="lb-img">
+      </div>
+      <button class="nav-arrow" onclick="nextPhoto()" aria-label="Next Photo">&#8250;</button>
+    </div>
+
+    <div class="lightbox-footer">
+      <span id="lb-counter">1 of 6</span> &bull; Tip: Use arrow keys to navigate, Esc to close.
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Annie Shi Productions. Delivered with care for your special memories.</p>
+    <p style="margin-top: 6px; font-size: 11px;">
+      Need assistance? Visit <a href="https://annieshiproductions.github.io/">annieshiproductions.github.io</a>.
+    </p>
+  </footer>
+
+  <script>
+    const SNEAK_PEEK_CONFIG = {
+      clientName: "Taylor",
+      sessionType: "Class of 2027 Senior Portraits",
+      driveFolderUrl: "https://drive.google.com/drive/folders/1ZD7e9dj6FKb1hHztdqjk7oYJIjgbO3hw",
+      photos: [
+        { id: "16w6NMINQ2371LR9uuJ-hFVUMyVVgyDtA", title: "Taylor - Sneak Peek 01" },
+        { id: "1_vHHu9lwsYXV4gpsK3x7MY8aR8ghAi94", title: "Taylor - Sneak Peek 02" },
+        { id: "10rc9anBVZnrBeMosQh0MxWQf-t2Z6omN", title: "Taylor - Sneak Peek 03" },
+        { id: "19JPv1lSrmR7QDBrPpdN9d598IHUPZfkA", title: "Taylor - Sneak Peek 04" },
+        { id: "1Yox314vRVIOdIMSi_kETQjo3bwwmxfKE", title: "Taylor - Sneak Peek 05" },
+        { id: "1ouMz8xDUW38GdR-h2cThZKVQ4k7q2xfO", title: "Taylor - Sneak Peek 06" }
+      ]
+    };
+
+    function getDriveThumbnail(fileId, width = 1200) {
+      return `https://lh3.googleusercontent.com/d/${fileId}=w${width}`;
+    }
+
+    function getDriveDownloadUrl(fileId) {
+      return `https://drive.google.com/uc?export=download&id=${fileId}`;
+    }
+
+    const gridEl = document.getElementById("photo-grid");
+    let currentIdx = 0;
+
+    SNEAK_PEEK_CONFIG.photos.forEach((photo, index) => {
+      const card = document.createElement("div");
+      card.className = "photo-card";
+      card.onclick = () => openLightbox(index);
+
+      const imgSrc = getDriveThumbnail(photo.id, 1000);
+      const downloadUrl = getDriveDownloadUrl(photo.id);
+
+      card.innerHTML = `
+        <img src="${imgSrc}" alt="${photo.title}" loading="lazy">
+        <div class="card-overlay">
+          <span class="card-filename">${photo.title}</span>
+          <a href="${downloadUrl}" class="card-quick-download" title="Download" target="_blank" onclick="event.stopPropagation()">
+            &#8595;
+          </a>
+        </div>
+      `;
+      gridEl.appendChild(card);
+    });
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lb-img");
+    const lbTitle = document.getElementById("lb-title");
+    const lbCounter = document.getElementById("lb-counter");
+    const lbDownloadBtn = document.getElementById("lb-download-btn");
+
+    function openLightbox(index) {
+      currentIdx = index;
+      updateLightboxContent();
+      lb.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    function updateLightboxContent() {
+      const photo = SNEAK_PEEK_CONFIG.photos[currentIdx];
+      lbImg.src = getDriveThumbnail(photo.id, 2400);
+      lbTitle.textContent = photo.title;
+      lbCounter.textContent = `${currentIdx + 1} of ${SNEAK_PEEK_CONFIG.photos.length}`;
+      lbDownloadBtn.href = getDriveDownloadUrl(photo.id);
+    }
+
+    function nextPhoto() {
+      currentIdx = (currentIdx + 1) % SNEAK_PEEK_CONFIG.photos.length;
+      updateLightboxContent();
+    }
+
+    function prevPhoto() {
+      currentIdx = (currentIdx - 1 + SNEAK_PEEK_CONFIG.photos.length) % SNEAK_PEEK_CONFIG.photos.length;
+      updateLightboxContent();
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("active")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextPhoto();
+      if (e.key === "ArrowLeft") prevPhoto();
+    });
+  </script>
+</body>
+</html>
