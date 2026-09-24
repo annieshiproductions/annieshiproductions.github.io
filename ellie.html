@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Strips Referer header so Google Drive CDN allows image embedding -->
+  <meta name="referrer" content="no-referrer">
   <title>Ellie's Bridal Shower | Full Gallery | Annie Shi Productions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +37,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Announcement Bar */
     .announcement-bar {
       background-color: var(--primary-navy);
       color: #FFFFFF;
@@ -47,7 +48,6 @@
       text-transform: uppercase;
     }
 
-    /* Navigation */
     header {
       background: #FFFFFF;
       border-bottom: 1px solid var(--border-color);
@@ -101,7 +101,6 @@
       color: var(--primary-navy);
     }
 
-    /* Gallery Header */
     .gallery-header {
       background-color: var(--bg-light);
       border-bottom: 1px solid var(--border-color);
@@ -144,7 +143,6 @@
       margin-bottom: 24px;
     }
 
-    /* Prominent Backup and Zip Reminder Banner */
     .download-reminder-card {
       background: #FFFFFF;
       border: 1px solid #CBD5E1;
@@ -193,7 +191,7 @@
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-    }
+    }}
 
     .btn {
       display: inline-flex;
@@ -232,7 +230,6 @@
       border-color: var(--primary-navy);
     }
 
-    /* Gallery Grid */
     .gallery-section {
       max-width: 1360px;
       margin: 0 auto;
@@ -248,11 +245,14 @@
       border-bottom: 1px solid var(--border-color);
       font-size: 13px;
       color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .photo-grid {
       column-count: 3;
       column-gap: 20px;
+      min-height: 400px;
     }
 
     @media (max-width: 1024px) {
@@ -285,6 +285,8 @@
       position: relative;
       cursor: pointer;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background-color: var(--bg-light);
+      min-height: 220px;
     }
 
     .photo-card:hover {
@@ -297,6 +299,8 @@
       height: auto;
       display: block;
       background-color: var(--bg-light);
+      min-height: 220px;
+      object-fit: cover;
     }
 
     .photo-card .card-overlay {
@@ -339,7 +343,60 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-    /* Lightbox Modal */
+    /* Pagination Styles */
+    .pagination-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .page-btn:hover:not(:disabled) {
+      border-color: var(--primary-navy);
+      background-color: var(--bg-light);
+    }
+
+    .page-btn.active {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    .page-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .page-nav-text {
+      padding: 0 16px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Lightbox */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -489,696 +546,6 @@
     <div class="gallery-header-inner">
       <span class="session-badge">Full Gallery</span>
       <h1 class="gallery-title">Ellie's <em>Bridal Shower</em></h1>
-      <p class="gallery-meta">Bridal Shower Celebration &bull; 172 Finished Photographs &bull; Full Resolution Collection</p>
-      
-      <div class="download-reminder-card">
-        <div class="reminder-header">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Important: Save and Back Up Your Photos Locally
-        </div>
-        <p class="reminder-text">
-          Please download the complete .zip file of your gallery to your computer or an external hard drive. Saving the original high-resolution files locally guarantees your celebration memories remain permanently safe, secure, and accessible for years to come.
-        </p>
-        <div class="reminder-steps">
-          <strong>How to download your complete gallery archive:</strong>
-          <ol>
-            <li>Click <strong>Download Gallery Archive (.zip)</strong> below to download all 172 original photos in one package.</li>
-            <li>Once the .zip file downloads, double click it on your computer to unzip and save your full collection.</li>
-            <li>You can also click <strong>Open Drive Folder</strong> to view files individually in Google Drive.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="action-row">
-        <a href="https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP" class="btn btn-primary" download>
-          Download Gallery Archive (.zip)
-        </a>
-        <a href="https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz" target="_blank" rel="noopener" class="btn btn-outline">
-          Open Drive Folder
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <main class="gallery-section">
-    <div class="gallery-stats">
-      <span>Showing all 172 photographs</span>
-      <span>Click any photograph to view high resolution or download individually</span>
-    </div>
-
-    <div class="photo-grid" id="photo-grid"></div>
-  </main>
-
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-toolbar">
-      <span class="lightbox-title" id="lb-title">Photo Preview</span>
-      <div class="lightbox-controls">
-        <a id="lb-download-btn" href="#" target="_blank" class="icon-btn" download>Download File</a>
-        <button class="icon-btn" onclick="closeLightbox()">Close (&times;)</button>
-      </div>
-    </div>
-
-    <div class="lightbox-body">
-      <button class="nav-arrow" onclick="prevPhoto()" aria-label="Previous Photo">&#8249;</button>
-      <div class="lightbox-img-container">
-        <img src="" alt="" class="lightbox-img" id="lb-img">
-      </div>
-      <button class="nav-arrow" onclick="nextPhoto()" aria-label="Next Photo">&#8250;</button>
-    </div>
-
-    <div class="lightbox-footer">
-      <span id="lb-counter">1 of 172</span> &bull; Tip: Use arrow keys to navigate, Esc to close.
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; Annie Shi Productions. Delivered with care for your special memories.</p>
-    <p style="margin-top: 6px; font-size: 11px;">
-      Need help downloading? Visit <a href="https://annieshiproductions.github.io/">annieshiproductions.github.io</a>.
-    </p>
-  </footer>
-
-  <script>
-    const GALLERY_CONFIG = {
-      clientName: "Ellie",
-      sessionType: "Bridal Shower Celebration",
-      driveFolderUrl: "https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz",
-      zipDownloadUrl: "https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP",
-      photos: [
-  {
-    "id": "11idegJrvsI2CP57ufXWMXhnXRw5SJv53",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-1"
-  },
-  {
-    "id": "1DpPEiXudZtD8TzpntdLnc9KQVIQ8e1z9",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-1-2"
-  },
-  {
-    "id": "1vsbdqEWcESi8LYguUunU9dBG5gdkBi4L",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-2"
-  },
-  {
-    "id": "1Wg3A3yf69NzpD47CZBlDEb6kFRsmooJE",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-2-2"
-  },
-  {
-    "id": "1IVDVQt8Jj_AWlRy4hXzwQ8g-o-WmBtai",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-3"
-  },
-  {
-    "id": "1GC6yJPvNtelb2tT9NopMebsBTz75fGTO",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-3-2"
-  },
-  {
-    "id": "1WEyXYIrQOW40PANCU6rupTWI9U32xMoV",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-4"
-  },
-  {
-    "id": "1nbNXXNWUkb2oqCwCyKFpnsqDw8iEEXOX",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-4-2"
-  },
-  {
-    "id": "1gbRlo8RHWCCNoLBVhnSzNS3rQIc0U9VA",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-5"
-  },
-  {
-    "id": "100W9Y5V17vWwS8z2L4xR9vT6uK1sNpMq",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-5-2"
-  },
-  {
-    "id": "182Qy5ClBicBH0yswD5hllgWywfE6AcNc",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-6"
-  },
-  {
-    "id": "1iK0sZ-g4yO6qM1vD8xR9vT6uK1sNpM7a",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-7"
-  },
-  {
-    "id": "1Og7zJArPS4PGdz6rx6IVkrnJo_d-cXil",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-7-2"
-  },
-  {
-    "id": "1Y0DUiOyG0FoSfpHfrhENbIOYdmg5jQLA",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-8"
-  },
-  {
-    "id": "17kL4vW9s8M1vD8xR9vT6uK1sNpM7aBcD",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-9"
-  },
-  {
-    "id": "1z9NEhBIr0h6Euf_VB55ZgwuU_oZrL5kU",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-9-2"
-  },
-  {
-    "id": "16bM4vW9s8M1vD8xR9vT6uK1sNpM7aBcE",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-10"
-  },
-  {
-    "id": "10ELNTzDSM3Ym1_Kb04C3ITuU7uWyCDrm",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-10-2"
-  },
-  {
-    "id": "1ME9Y-YdnuAzhLmzX_foU1E2lxuS_m61l",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-11"
-  },
-  {
-    "id": "1IvoQfB0M8r0BqJY3qpy1SANBgHR1sYP_",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-11-2"
-  },
-  {
-    "id": "1bvtJmNarEWvIHFz9cHngK7xcI4Nqq3Ux",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-12"
-  },
-  {
-    "id": "1LEFE0JB4TiqX0G6fQALTwm89qysIuDXq",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-13"
-  },
-  {
-    "id": "17kL4vW9s8M1vD8xR9vT6uK1sNpM7aBcF",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-14"
-  },
-  {
-    "id": "16bM4vW9s8M1vD8xR9vT6uK1sNpM7aBcG",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-15"
-  },
-  {
-    "id": "14vW9s8M1vD8xR9vT6uK1sNpM7aBcH123",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-16"
-  },
-  {
-    "id": "1H9gd3UaTe8GZire5Rh4rKObB9mWUq4Sv",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-17"
-  },
-  {
-    "id": "15vW9s8M1vD8xR9vT6uK1sNpM7aBcI456",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-18"
-  },
-  {
-    "id": "1_DiM-bjx_tjuXTqe1y5iFNG-yYmjsTgY",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-19"
-  },
-  {
-    "id": "1lxwnTUPWluq8gMTQdp5FrbuwKZ6v0avA",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-20"
-  },
-  {
-    "id": "1Xu5Td0kH3xibmhQswvzhSaGgsdo5KOjA",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-21"
-  },
-  {
-    "id": "1M74C7BV6eWTOnWdQMNs7TEDll-KMoBtI",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-22"
-  },
-  {
-    "id": "1eVUsJc2XCdG9XWXnZSof-xTxvcjmu-s1",
-    "title": "Ellie's Bridal Shower by @annieshiproductions-23"
-```html
-<!-- File name: ellies-bridal-shower.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ellie's Bridal Shower | Full Gallery | Annie Shi Productions</title>
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap)" rel="stylesheet">
-  <style>
-    :root {
-      --primary-navy: #223859;
-      --navy-hover: #172840;
-      --bg-light: #EFF5F9;
-      --card-bg: #FFFFFF;
-      --text-main: #111111;
-      --text-muted: #6B7280;
-      --border-color: #E2E8F0;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background-color: #FAFCFE;
-      color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .announcement-bar {
-      background-color: var(--primary-navy);
-      color: #FFFFFF;
-      text-align: center;
-      padding: 9px 16px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    header {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-    }
-
-    .nav-container {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      letter-spacing: 0.08em;
-      font-weight: 500;
-      text-transform: uppercase;
-      color: var(--primary-navy);
-      text-decoration: none;
-    }
-
-    .brand-logo span {
-      font-style: italic;
-      font-weight: 400;
-      text-transform: none;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .nav-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-
-    .nav-link:hover {
-      color: var(--primary-navy);
-    }
-
-    .gallery-header {
-      background-color: var(--bg-light);
-      border-bottom: 1px solid var(--border-color);
-      padding: 56px 24px 48px;
-      text-align: center;
-    }
-
-    .gallery-header-inner {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .session-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--primary-navy);
-      margin-bottom: 12px;
-    }
-
-    .gallery-title {
-      font-family: var(--font-serif);
-      font-size: 48px;
-      font-weight: 400;
-      color: var(--primary-navy);
-      margin-bottom: 12px;
-      line-height: 1.15;
-    }
-
-    .gallery-title em {
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .gallery-meta {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .download-reminder-card {
-      background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      border-left: 4px solid var(--primary-navy);
-      border-radius: 8px;
-      padding: 22px 26px;
-      margin: 0 auto 30px;
-      text-align: left;
-      box-shadow: 0 4px 16px rgba(34, 56, 89, 0.05);
-    }
-
-    .reminder-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--primary-navy);
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
-    }
-
-    .reminder-text {
-      font-size: 13px;
-      color: #334155;
-      line-height: 1.6;
-    }
-
-    .reminder-steps {
-      margin-top: 12px;
-      font-size: 12px;
-      color: var(--text-muted);
-      background-color: #F8FAFC;
-      border-radius: 6px;
-      padding: 12px 16px;
-      border: 1px solid var(--border-color);
-    }
-
-    .reminder-steps ol {
-      margin-left: 18px;
-      line-height: 1.7;
-    }
-
-    .action-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 28px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: var(--primary-navy);
-      color: #FFFFFF;
-      border: 1px solid var(--primary-navy);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--navy-hover);
-      border-color: var(--navy-hover);
-    }
-
-    .btn-outline {
-      background-color: #FFFFFF;
-      color: var(--primary-navy);
-      border: 1px solid var(--border-color);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary-navy);
-    }
-
-    .gallery-section {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 44px 24px 80px;
-    }
-
-    .gallery-stats {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .photo-grid {
-      column-count: 3;
-      column-gap: 20px;
-    }
-
-    @media (max-width: 1024px) {
-      .photo-grid {
-        column-count: 2;
-        column-gap: 16px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .photo-grid {
-        column-count: 1;
-      }
-      .gallery-title {
-        font-size: 34px;
-      }
-      .download-reminder-card {
-        padding: 16px;
-      }
-    }
-
-    .photo-card {
-      break-inside: avoid;
-      margin-bottom: 20px;
-      background: #FFFFFF;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .photo-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(34, 56, 89, 0.1);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background-color: var(--bg-light);
-      min-height: 180px;
-    }
-
-    .photo-card .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(34, 56, 89, 0.8) 0%, rgba(34, 56, 89, 0) 45%);
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 14px;
-      color: #FFFFFF;
-    }
-
-    .photo-card:hover .card-overlay {
-      opacity: 1;
-    }
-
-    .card-filename {
-      font-size: 12px;
-      letter-spacing: 0.04em;
-    }
-
-    .card-quick-download {
-      color: #FFFFFF;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.25);
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      transition: background 0.2s ease;
-    }
-
-    .card-quick-download:hover {
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(17, 24, 39, 0.95);
-      backdrop-filter: blur(8px);
-      z-index: 100;
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-    }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #FFFFFF;
-      padding: 4px 10px;
-      font-size: 13px;
-    }
-
-    .lightbox-title {
-      font-family: var(--font-serif);
-      font-size: 18px;
-      letter-spacing: 0.05em;
-    }
-
-    .lightbox-controls {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .icon-btn {
-      background: none;
-      border: none;
-      color: #FFFFFF;
-      cursor: pointer;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border-radius: 4px;
-      transition: background 0.2s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .icon-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .lightbox-body {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .lightbox-img-container {
-      max-width: 90vw;
-      max-height: 82vh;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 82vh;
-      object-fit: contain;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
-      border-radius: 4px;
-    }
-
-    .nav-arrow {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: #FFFFFF;
-      font-size: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease;
-      user-select: none;
-    }
-
-    .nav-arrow:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .lightbox-footer {
-      text-align: center;
-      color: #9CA3AF;
-      font-size: 12px;
-      padding-top: 10px;
-    }
-
-    footer {
-      background: #FFFFFF;
-      border-top: 1px solid var(--border-color);
-      padding: 44px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--primary-navy);
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="announcement-bar">
-    Client Gallery &bull; Annie Shi Productions
-  </div>
-
-  <header>
-    <div class="nav-container">
-      <a href="[https://annieshiproductions.github.io/](https://annieshiproductions.github.io/)" class="brand-logo">
-        Annie Shi <span>Productions</span>
-      </a>
-      <div class="nav-right">
-        <a href="[https://annieshiproductions.github.io/](https://annieshiproductions.github.io/)" class="nav-link">Main Website</a>
-        <a id="btn-download-zip" href="[https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP](https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP)" class="btn btn-primary" download>
-          Download Gallery (.zip)
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <section class="gallery-header">
-    <div class="gallery-header-inner">
-      <span class="session-badge">Full Gallery</span>
-      <h1 class="gallery-title">Ellie's <em>Bridal Shower</em></h1>
       <p class="gallery-meta">Bridal Shower Celebration &bull; 172 Photographs &bull; Full Resolution Collection</p>
       
       <div class="download-reminder-card">
@@ -1200,10 +567,10 @@
       </div>
 
       <div class="action-row">
-        <a href="[https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP](https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP)" class="btn btn-primary" download>
+        <a href="https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP" class="btn btn-primary" download>
           Download Gallery Archive (.zip)
         </a>
-        <a href="[https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz](https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz)" target="_blank" rel="noopener" class="btn btn-outline">
+        <a href="https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz" target="_blank" rel="noopener" class="btn btn-outline">
           Open Drive Folder
         </a>
       </div>
@@ -1212,11 +579,13 @@
 
   <main class="gallery-section">
     <div class="gallery-stats">
-      <span>Showing all 172 photographs</span>
+      <span id="stats-counter">Showing photographs 1 - 30 of 172</span>
       <span>Click any photograph to view high resolution or download individually</span>
     </div>
 
     <div class="photo-grid" id="photo-grid"></div>
+
+    <div class="pagination-bar" id="pagination-bar"></div>
   </main>
 
   <div class="lightbox" id="lightbox">
@@ -1231,7 +600,7 @@
     <div class="lightbox-body">
       <button class="nav-arrow" onclick="prevPhoto()" aria-label="Previous Photo">&#8249;</button>
       <div class="lightbox-img-container">
-        <img src="" alt="" class="lightbox-img" id="lb-img">
+        <img src="" alt="" class="lightbox-img" id="lb-img" referrerpolicy="no-referrer">
       </div>
       <button class="nav-arrow" onclick="nextPhoto()" aria-label="Next Photo">&#8250;</button>
     </div>
@@ -1244,7 +613,7 @@
   <footer>
     <p>&copy; Annie Shi Productions. Delivered with care for your special memories.</p>
     <p style="margin-top: 6px; font-size: 11px;">
-      Need help downloading? Visit <a href="[https://annieshiproductions.github.io/](https://annieshiproductions.github.io/)">annieshiproductions.github.io</a>.
+      Need help downloading? Visit <a href="https://annieshiproductions.github.io/">annieshiproductions.github.io</a>.
     </p>
   </footer>
 
@@ -1254,8 +623,9 @@
     const GALLERY_CONFIG = {
       clientName: "Ellie",
       sessionType: "Bridal Shower Celebration",
-      driveFolderUrl: "[https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz](https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz)",
-      zipDownloadUrl: "[https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP](https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP)",
+      driveFolderUrl: "https://drive.google.com/drive/folders/1xVpgbz9-85c143Rd-HrTIndIRH85rBZz",
+      zipDownloadUrl: "https://drive.google.com/uc?export=download&id=1WHldpQ8a7OLoaoXjgTyP8n5qNsxD3hTP",
+      pageSize: 30,
       photos: RAW_DATA.map(([id, suffix]) => ({
         id: id,
         title: "Ellie's Bridal Shower - " + suffix
@@ -1263,27 +633,33 @@
     };
 
     function getDriveThumbnail(fileId, width = 800) {
-      return `[https://lh3.googleusercontent.com/d/$](https://lh3.googleusercontent.com/d/$){fileId}=w${width}`;
+      return `https://lh3.googleusercontent.com/d/${fileId}=w${width}`;
     }
 
     function getDriveDownloadUrl(fileId) {
-      return `[https://drive.google.com/uc?export=download&id=$](https://drive.google.com/uc?export=download&id=$){fileId}`;
+      return `https://drive.google.com/uc?export=download&id=${fileId}`;
     }
 
     function handleImgError(img, fileId) {
       if (!img.dataset.triedBackup) {
         img.dataset.triedBackup = "1";
-        img.src = `[https://drive.google.com/thumbnail?id=$](https://drive.google.com/thumbnail?id=$){fileId}&sz=w800`;
+        img.src = `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
       }
     }
 
     const gridEl = document.getElementById("photo-grid");
-    let currentIdx = 0;
+    const statsCounter = document.getElementById("stats-counter");
+    const paginationBar = document.getElementById("pagination-bar");
 
-    GALLERY_CONFIG.photos.forEach((photo, index) => {
+    const totalPhotos = GALLERY_CONFIG.photos.length;
+    const totalPages = Math.ceil(totalPhotos / GALLERY_CONFIG.pageSize);
+    let currentPage = 1;
+    let currentLightboxIdx = 0;
+
+    function renderPhotoCard(photo, globalIndex) {
       const card = document.createElement("div");
       card.className = "photo-card";
-      card.onclick = () => openLightbox(index);
+      card.onclick = () => openLightbox(globalIndex);
 
       const imgSrc = getDriveThumbnail(photo.id, 800);
       const downloadUrl = getDriveDownloadUrl(photo.id);
@@ -1292,6 +668,7 @@
         <img src="${imgSrc}" 
              alt="${photo.title}" 
              loading="lazy"
+             referrerpolicy="no-referrer"
              onerror="handleImgError(this, '${photo.id}')">
         <div class="card-overlay">
           <span class="card-filename">${photo.title}</span>
@@ -1300,8 +677,71 @@
           </a>
         </div>
       `;
-      gridEl.appendChild(card);
-    });
+      return card;
+    }
+
+    function goToPage(page) {
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+
+      const startIndex = (currentPage - 1) * GALLERY_CONFIG.pageSize;
+      const endIndex = Math.min(startIndex + GALLERY_CONFIG.pageSize, totalPhotos);
+
+      gridEl.innerHTML = "";
+      const fragment = document.createDocumentFragment();
+
+      for (let i = startIndex; i < endIndex; i++) {
+        fragment.appendChild(renderPhotoCard(GALLERY_CONFIG.photos[i], i));
+      }
+      gridEl.appendChild(fragment);
+
+      statsCounter.textContent = `Showing photographs ${startIndex + 1} - ${endIndex} of ${totalPhotos} (Page ${currentPage} of ${totalPages})`;
+
+      renderPaginationControls();
+    }
+
+    function renderPaginationControls() {
+      paginationBar.innerHTML = "";
+
+      const prevBtn = document.createElement("button");
+      prevBtn.className = "page-btn page-nav-text";
+      prevBtn.textContent = "Previous";
+      prevBtn.disabled = (currentPage === 1);
+      prevBtn.onclick = () => {
+        goToPage(currentPage - 1);
+        scrollToGrid();
+      };
+      paginationBar.appendChild(prevBtn);
+
+      for (let p = 1; p <= totalPages; p++) {
+        const btn = document.createElement("button");
+        btn.className = `page-btn ${p === currentPage ? "active" : ""}`;
+        btn.textContent = p;
+        btn.onclick = () => {
+          goToPage(p);
+          scrollToGrid();
+        };
+        paginationBar.appendChild(btn);
+      }
+
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "page-btn page-nav-text";
+      nextBtn.textContent = "Next";
+      nextBtn.disabled = (currentPage === totalPages);
+      nextBtn.onclick = () => {
+        goToPage(currentPage + 1);
+        scrollToGrid();
+      };
+      paginationBar.appendChild(nextBtn);
+    }
+
+    function scrollToGrid() {
+      const navOffset = 90;
+      const targetPos = gridEl.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      window.scrollTo({ top: targetPos, behavior: "smooth" });
+    }
+
+    goToPage(1);
 
     const lb = document.getElementById("lightbox");
     const lbImg = document.getElementById("lb-img");
@@ -1310,7 +750,7 @@
     const lbDownloadBtn = document.getElementById("lb-download-btn");
 
     function openLightbox(index) {
-      currentIdx = index;
+      currentLightboxIdx = index;
       updateLightboxContent();
       lb.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -1322,20 +762,20 @@
     }
 
     function updateLightboxContent() {
-      const photo = GALLERY_CONFIG.photos[currentIdx];
+      const photo = GALLERY_CONFIG.photos[currentLightboxIdx];
       lbImg.src = getDriveThumbnail(photo.id, 2400);
       lbTitle.textContent = photo.title;
-      lbCounter.textContent = `${currentIdx + 1} of ${GALLERY_CONFIG.photos.length}`;
+      lbCounter.textContent = `${currentLightboxIdx + 1} of ${totalPhotos}`;
       lbDownloadBtn.href = getDriveDownloadUrl(photo.id);
     }
 
     function nextPhoto() {
-      currentIdx = (currentIdx + 1) % GALLERY_CONFIG.photos.length;
+      currentLightboxIdx = (currentLightboxIdx + 1) % totalPhotos;
       updateLightboxContent();
     }
 
     function prevPhoto() {
-      currentIdx = (currentIdx - 1 + GALLERY_CONFIG.photos.length) % GALLERY_CONFIG.photos.length;
+      currentLightboxIdx = (currentLightboxIdx - 1 + totalPhotos) % totalPhotos;
       updateLightboxContent();
     }
 
@@ -1346,5 +786,3 @@
       if (e.key === "ArrowLeft") prevPhoto();
     });
   </script>
-</body>
-</html>
