@@ -1,0 +1,771 @@
+<!-- File name: janaesa-keerithi.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Strips Referer header so Google Drive CDN allows image embedding -->
+  <meta name="referrer" content="no-referrer">
+  <title>Janaesa and Keerithi | Senior Portraits | Annie Shi Productions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-navy: #223859;
+      --navy-hover: #172840;
+      --bg-light: #EFF5F9;
+      --card-bg: #FFFFFF;
+      --text-main: #111111;
+      --text-muted: #6B7280;
+      --border-color: #E2E8F0;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: #FAFCFE;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .announcement-bar {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .nav-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary-navy);
+    }
+
+    .gallery-header {
+      background-color: var(--bg-light);
+      border-bottom: 1px solid var(--border-color);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .gallery-header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .session-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+    }
+
+    .gallery-title {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .gallery-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .gallery-meta {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .download-reminder-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-left: 4px solid var(--primary-navy);
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin: 0 auto 30px;
+      text-align: left;
+      box-shadow: 0 4px 16px rgba(34, 56, 89, 0.05);
+    }
+
+    .reminder-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .reminder-text {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .reminder-steps {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background-color: #F8FAFC;
+      border-radius: 6px;
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .reminder-steps ol {
+      margin-left: 18px;
+      line-height: 1.7;
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Button System matching Annie Shi Productions branding */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-color: var(--navy-hover);
+      border-color: var(--navy-hover);
+    }
+
+    .btn-outline {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover:not(:disabled) {
+      border-color: var(--primary-navy);
+      background-color: var(--bg-light);
+    }
+
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .btn-page {
+      min-width: 42px;
+      padding: 11px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .gallery-section {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 44px 24px 80px;
+    }
+
+    .gallery-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .photo-grid {
+      column-count: 3;
+      column-gap: 20px;
+      min-height: 400px;
+    }
+
+    @media (max-width: 1024px) {
+      .photo-grid {
+        column-count: 2;
+        column-gap: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .photo-grid {
+        column-count: 1;
+      }
+      .gallery-title {
+        font-size: 34px;
+      }
+      .download-reminder-card {
+        padding: 16px;
+      }
+    }
+
+    .photo-card {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background-color: var(--bg-light);
+      min-height: 220px;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(34, 56, 89, 0.1);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: var(--bg-light);
+      min-height: 220px;
+      object-fit: cover;
+    }
+
+    .photo-card .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(34, 56, 89, 0.8) 0%, rgba(34, 56, 89, 0) 45%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 14px;
+      color: #FFFFFF;
+    }
+
+    .photo-card:hover .card-overlay {
+      opacity: 1;
+    }
+
+    .card-filename {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .card-quick-download {
+      color: #FFFFFF;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+
+    .card-quick-download:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Pagination Bar */
+    .pagination-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(17, 24, 39, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #FFFFFF;
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+
+    .lightbox-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      letter-spacing: 0.05em;
+    }
+
+    .lightbox-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .lightbox-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lightbox-img-container {
+      max-width: 90vw;
+      max-height: 82vh;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+    }
+
+    .nav-arrow {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #FFFFFF;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+
+    .nav-arrow:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .lightbox-footer {
+      text-align: center;
+      color: #9CA3AF;
+      font-size: 12px;
+      padding-top: 10px;
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 44px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    Client Gallery &bull; Annie Shi Productions
+  </div>
+
+  <header>
+    <div class="nav-container">
+      <a href="https://annieshiproductions.github.io/" class="brand-logo">
+        Annie Shi <span>Productions</span>
+      </a>
+      <div class="nav-right">
+        <a href="https://annieshiproductions.github.io/" class="nav-link">Main Website</a>
+        <a id="btn-download-zip" href="https://drive.google.com/uc?export=download&id=13WK0dMFc9_iwEgVu3ni1DlPF9BGHjba3" class="btn btn-primary" download>
+          Download Gallery (.zip)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="gallery-header">
+    <div class="gallery-header-inner">
+      <span class="session-badge">Full Gallery</span>
+      <h1 class="gallery-title">Janaesa &amp; Keerithi's <em>Senior Portraits</em></h1>
+      <p class="gallery-meta">Senior Portrait Session &bull; 112 Photographs &bull; Full Resolution Collection</p>
+      
+      <div class="download-reminder-card">
+        <div class="reminder-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Important: Save and Back Up Your Photos Locally
+        </div>
+        <p class="reminder-text">
+          Please download the complete .zip archive of your gallery to your computer or an external hard drive. Saving the original high-resolution files locally guarantees your senior portrait memories remain permanently safe, secure, and accessible for years to come.
+        </p>
+        <div class="reminder-steps">
+          <strong>How to download your full gallery archive:</strong>
+          <ol>
+            <li>Click <strong>Download Gallery Archive (.zip)</strong> below to download all 112 high-resolution photos in one package.</li>
+            <li>Once the .zip file downloads, double click it on your computer to unzip and save your full collection.</li>
+            <li>You can also click <strong>Open Drive Folder</strong> to view files individually in Google Drive.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <a href="https://drive.google.com/uc?export=download&id=13WK0dMFc9_iwEgVu3ni1DlPF9BGHjba3" class="btn btn-primary" download>
+          Download Gallery Archive (.zip)
+        </a>
+        <a href="https://drive.google.com/drive/folders/1icdOIvCbmsAmjXqAEOHHHRZWN5rErT5i" target="_blank" rel="noopener" class="btn btn-outline">
+          Open Drive Folder
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="gallery-section">
+    <div class="gallery-stats">
+      <span id="stats-counter">Showing photographs 1 - 30 of 112</span>
+      <span>Click any photograph to view high resolution or download individually</span>
+    </div>
+
+    <div class="photo-grid" id="photo-grid"></div>
+
+    <div class="pagination-bar" id="pagination-bar"></div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-toolbar">
+      <span class="lightbox-title" id="lb-title">Photo Preview</span>
+      <div class="lightbox-controls">
+        <a id="lb-download-btn" href="#" target="_blank" class="icon-btn" download>Download File</a>
+        <button class="icon-btn" onclick="closeLightbox()">Close (&times;)</button>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <button class="nav-arrow" onclick="prevPhoto()" aria-label="Previous Photo">&#8249;</button>
+      <div class="lightbox-img-container">
+        <img src="" alt="" class="lightbox-img" id="lb-img" referrerpolicy="no-referrer">
+      </div>
+      <button class="nav-arrow" onclick="nextPhoto()" aria-label="Next Photo">&#8250;</button>
+    </div>
+
+    <div class="lightbox-footer">
+      <span id="lb-counter">1 of 112</span> &bull; Tip: Use arrow keys to navigate, Esc to close.
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Annie Shi Productions. Delivered with care for your special memories.</p>
+    <p style="margin-top: 6px; font-size: 11px;">
+      Need help downloading? Visit <a href="https://annieshiproductions.github.io/">annieshiproductions.github.io</a>.
+    </p>
+  </footer>
+
+  <script>
+    const RAW_DATA = [["1mK_DnTWkg8crEUPyeejHhciCnmPCj35Z", "1"], ["12YzEsukQZXahB7oMe_r0L7xCLFoVrZJt", "2"], ["1uYlWqDQHJgQbwPP14CtriFu6kQlx_CmM", "3"], ["1cbaP1kujHfO9i3uQ0nB1Sy-lobhpoMKh", "4"], ["1wb2SjlqoX4m3eIUeyiW8BMQKDdh1U86N", "5"], ["16TOYHTSL49qBnHwVYTimSf_-Q6g9IWqA", "6"], ["1hZM-Z6E4SJpChDnqCcG12SpcbQy9c-pK", "7"], ["1IQDeWGWbn71CmHe9RyslQe0nxkYaeWp8", "8"], ["1tJzWdTkmnvrGaHZeWZY9cm-ydUbu_OS5", "9"], ["1wfM-_Gc2uRhdnBlP2b29J2yz7Vxda41_", "10"], ["1c4-va_yAKAlZ51hQ_UEPVjwIFqDJjzxL", "11"], ["1RP3SUyAPFTFRsjhqTkmVK1LjO4XGszGK", "12"], ["1p2sHoRQd3VEhxEAbJ8JRiAWF397-E1X7", "13"], ["1aL1GhzjofsCHaaTfZNr8RI7X4BbvldCa", "14"], ["1bVLw5vjJprybIJzWkmeLGI4391tzadSK", "15"], ["1Sf_XX5o2w2ZWHlPCJZvdEz3SbqkEcCDr", "16"], ["12ktZfXKF6NqC7Mc5aIYqo5rS30NIVQge", "17"], ["1PaiIe9EbWN961Yh2SqKBb_SUoBZqEWvk", "18"], ["1fYv8hVxqgzuaRpWhyMp0u4rY_BVjfrLA", "19"], ["1Q5WSfGVms9Kh6j3ciq3icyTGmeJ7xJI2", "20"], ["19wl5fNIIJ9fyOCuRXer2Ko5mfOwHUcMf", "21"], ["1ctKvMWu_94oPRSCb1nWemuo9DSY8hueF", "22"], ["15lhADijGoFhQ_OPmcQfWzKePbt_Lj6F5", "23"], ["1_stJiFvdTRJTo9jAu3qsaDMQ80e7eNDY", "24"], ["1O35-3KJ1hsam06JW9P-oxOkR3XREQRD-", "25"], ["1-QQlgg1XWmyo8KAZGifAwVITQzshpWUF", "26"], ["1b3PYp2-LkMmKXYKw_AH3VtivQUmC0oM7", "27"], ["1qVon7GEgIk1uBs1s0yXvJN-lXNgbW3q4", "28"], ["1G9qZZ7mAUBmxviHhYa5fIiU2l_hBLI3b", "29"], ["1f7bOxs69_ZM03wgxQrRnS_zDHv3o0qcv", "30"], ["1MiRSmqWYbvjJOTQwC7h85I3h_YVKSaSl", "31"], ["1RLo5y8MywbzTaHcc08T8Xsh5ZJi4JI-S", "32"], ["106Fo06CwSM7cygl9vhfh4QJXwu7ik_AB", "33"], ["1tG-2VQNO1vYJxyb6iRL-9Wo1afNd1n9v", "34"], ["1v7LH2LqyIBLaz5kO9p8UqiaD_-TACh3r", "35"], ["1J_oUtYtIKgFMFTxVcNy_aydaSj78AOHz", "36"], ["1nKsQVh-AqahoJxB1R91qkOfEko0C_U4f", "37"], ["1ZeS7UN4UPHMnD6OWVG-D0Q98unYHxkZ8", "38"], ["1QHjaSlCmaApZ2WDXQ4-UbSd2YgOheYr3", "39"], ["1ePYicfatoX1_3nAeF508x6cFuuzEIye2", "40"], ["1zTgHpJjlsED09L-k6px6cGN-qAF7T1rH", "41"], ["1qTZGzazoOKmNQ2zNdyjbD1ltkHqr0eNT", "42"], ["1ENe1h-7Bs3B6qokqgN3EpPqC8ffNIXOw", "43"], ["1Ko9uZ1n-xDFU7DsdlPGF9iu2SKZzUyIJ", "44"], ["1B1WRi2BAjtw9Ez3sV2moP5agvCtClJAc", "45"], ["1D5ckjaoI4OTWHuUkiyzLVf_D5mIsmjqi", "46"], ["16BSNyk8b22_DMenQM-BzInYj1-WxFIzq", "47"], ["1WELNZSUp5e21ATD6y2YKC4JaezUsrLW7", "48"], ["1orw1p2atdJzJzo2Iu2ytISlgiresk9mx", "49"], ["1NZoz9SP2goLp6r8_lkkev_MwvVUmKjGR", "50"], ["1TH0IArSSlWJuy29NaKPZg7alFs-CcUfx", "51"], ["1k_9zt8_da_Ess_w7kVMqODSaNAAxTBVI", "52"], ["1YAUMtnX57D_jsR3wfDfikQ8neofulDsq", "53"], ["1JJySboaCeHfgec_bKrNjNGgo5zgATbsi", "54"], ["1vmjfHF1Qv3DWo28-X5d1Fkckhtm87Xud", "55"], ["14f7ASVvT04vB54vS1HSfHTkTh_qLVyMO", "56"], ["1Q4gruM0-v7d1VSpFTaD0NWiZxynMYGkP", "57"], ["1ahBOl4uRtC9FUcc-J8ShLO8N9COzE4Xc", "58"], ["11Xn_-xRPgrFbP9eFVemTMddWfToAn2PY", "59"], ["1OUJgaVUg_0zsJTNyqi_jIAOZPAInBxB7", "60"], ["1NxpClWlzIzLfC9c9PC9kxjr6mhpFIepz", "61"], ["1xnU17rRZ7K0ZYKkHbuvNsmVno1LR_kQk", "62"], ["1_N0L-hGujw_12gwALuodPFtKluRmQJP-", "63"], ["1mhi4cOMSAFd028fJjlWuK7DP30jzLlwj", "64"], ["125jrZYCdxDMLnz7h7ys0V1wRURnSTrdK", "65"], ["10sXREsNV-Lrw22llNMO7xx9qChBOQKfo", "66"], ["1C4kmzWpZ3GbcbUnAIJQ6tLEvMD9SZDpV", "67"], ["1F5MoUXvOqtHdqaE8bp7Q4dOFoC6H6Fih", "68"], ["1fU-x8yw5DW8E2Cd57IV8rEvFFRVK9woJ", "69"], ["1MVJiZkt56ONt-b9bY6HDb6y-Lv1sUcii", "70"], ["1EIMp6XCT-kRG5-FWnHHmD-sgFmeTPl3G", "71"], ["19Vq_acFOfbxs3Frbw5KlT2P_FKo3TU7A", "72"], ["1a1_lulHZoUt2sjRKUOktC2ohPYvWhEe7", "73"], ["1917m6oCgjJlt-Qamw-XsQZTIUUl0eUou", "74"], ["1dT8BCdhMERI3SqP4bxVNIEMTN1cNdew_", "75"], ["1-dvFIMsUxjjUgUWpay8Ymds_SNH65ckC", "76"], ["1Vw1ii12J7m0OMGUfFZ3_Fk67o-KZ5L9I", "77"], ["1uXPt26tPy4XrH9bxO-FgRV9wOemni5IR", "78"], ["1_NhNhuXuIAjd4b2YMe6Cnq5FOI3uc3Hb", "79"], ["1Knmf3iKzdeIHqc_vvgpkxTXws9_p4ktp", "80"], ["1eUYLbOZOIUviTgyjMQulTA0fqhYw3-jQ", "81"], ["143MOO0jwV3MDCNFrPVsh08fJSKst_gQk", "82"], ["12wmtrF9hGsbP8Ruc_GNXWyjdSJs5aWRM", "83"], ["1pblbwm1tHDOSHewSQs6ltzLYe4ZSrXmM", "84"], ["134n3TPU6lrKHU_GEGqr4DfenBgjyQbco", "85"], ["1r8VWUR9v5UC1c_5HHvdJvJSxrWv2luQM", "86"], ["16SKwi8SU_Ic4ajUu0ngUwMRxrvvLVO3q", "87"], ["1n_D7aAHSn-K_MChe_ieaK7znjfvjT9n_", "88"], ["1wzqVXvEqmNlTMXBxfN-27ZvKg1qc9Gnl", "89"], ["1tcGgXJ1b_-_dF4sAhBoT9dyZ37BlIOmS", "90"], ["1DjQZJiLixQllkVfkzSMSrTw9yaVrkq8-", "91"], ["1X47beThO08gmj4vexZkAgEChhVL-1_T4", "92"], ["11tfWh3MTjJWamze8TClEhkLak0OFtNG6", "93"], ["10wQTfsbLQzymHQeyW3PTloa1_nyXcFbr", "94"], ["1B_M7w1MM7hYViS2TQaOnRxI3kOYHXyDJ", "95"], ["1hpCmnr1_SkFsh-AJMSA5718fOFx42ooB", "96"], ["1lONNMYN9V6-Vad6TQ6Bj8VHihMMN6Y26", "97"], ["1HZqGtH5-YgUVeL05yzZafNppXPM26Ygi", "98"], ["1x5XO0ddQPtRigZ8Vczm6RuISqk5n1qiE", "99"], ["11X-bQIj7bTX6Cr0bpws46NqJjkH3CQD5", "100"], ["1CFi8na1YvWddrknt6c0ELo4xxJw4S3Qi", "101"], ["1vaJ_emxs_n93qDiPV2H8mJjJviAQQjiK", "102"], ["108QfdLchd4DjOHB__Yhn9nq5MbRDHyZp", "103"], ["1jmsEGHbvqZuNnjjzAW3i3_n9rCkK0A32", "104"], ["19yMEK43-cvLBCZsmdNvjGHgFtMXjouRQ", "105"], ["14j_ThV1sFAa2pclDJYulkYSYGEFaVYZv", "106"], ["1nD9jfHmbXUlUxLKM0octwvJYLL4uH-iR", "107"], ["1qmVJm-XqCBQkricw5M8jXb2j0bnH7uk4", "108"], ["1X3rUh0L4_VmqNlZujg4s-hvLEYefPZvk", "109"], ["1xv5lI4JStdqmW27bCh7OM1Wo1D4VzG8s", "110"], ["1nCH0EwQfc1or6BoXWwJsvCuXhn2wHKyn", "111"], ["1kctIYhyjG9wu99sBVL4YJElabDlVuhbu", "112"]];
+
+    const GALLERY_CONFIG = {
+      clientName: "Janaesa and Keerithi",
+      sessionType: "Senior Portrait Session",
+      driveFolderUrl: "https://drive.google.com/drive/folders/1icdOIvCbmsAmjXqAEOHHHRZWN5rErT5i",
+      zipDownloadUrl: "https://drive.google.com/uc?export=download&id=13WK0dMFc9_iwEgVu3ni1DlPF9BGHjba3",
+      pageSize: 30,
+      photos: RAW_DATA.map(([id, suffix]) => ({
+        id: id,
+        title: "Janaesa and Keerithi - " + suffix
+      }))
+    };
+
+    function getDriveThumbnail(fileId, width = 800) {
+      return `https://lh3.googleusercontent.com/d/${fileId}=w${width}`;
+    }
+
+    function getDriveDownloadUrl(fileId) {
+      return `https://drive.google.com/uc?export=download&id=${fileId}`;
+    }
+
+    function handleImgError(img, fileId) {
+      if (!img.dataset.triedBackup) {
+        img.dataset.triedBackup = "1";
+        img.src = `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
+      }
+    }
+
+    const gridEl = document.getElementById("photo-grid");
+    const statsCounter = document.getElementById("stats-counter");
+    const paginationBar = document.getElementById("pagination-bar");
+
+    const totalPhotos = GALLERY_CONFIG.photos.length;
+    const totalPages = Math.ceil(totalPhotos / GALLERY_CONFIG.pageSize);
+    let currentPage = 1;
+    let currentLightboxIdx = 0;
+
+    function renderPhotoCard(photo, globalIndex) {
+      const card = document.createElement("div");
+      card.className = "photo-card";
+      card.onclick = () => openLightbox(globalIndex);
+
+      const imgSrc = getDriveThumbnail(photo.id, 800);
+      const downloadUrl = getDriveDownloadUrl(photo.id);
+
+      card.innerHTML = `
+        <img src="${imgSrc}" 
+             alt="${photo.title}" 
+             loading="lazy"
+             referrerpolicy="no-referrer"
+             onerror="handleImgError(this, '${photo.id}')">
+        <div class="card-overlay">
+          <span class="card-filename">${photo.title}</span>
+          <a href="${downloadUrl}" class="card-quick-download" title="Download file" target="_blank" onclick="event.stopPropagation()">
+            &#8595;
+          </a>
+        </div>
+      `;
+      return card;
+    }
+
+    function goToPage(page) {
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+
+      const startIndex = (currentPage - 1) * GALLERY_CONFIG.pageSize;
+      const endIndex = Math.min(startIndex + GALLERY_CONFIG.pageSize, totalPhotos);
+
+      gridEl.innerHTML = "";
+      const fragment = document.createDocumentFragment();
+
+      for (let i = startIndex; i < endIndex; i++) {
+        fragment.appendChild(renderPhotoCard(GALLERY_CONFIG.photos[i], i));
+      }
+      gridEl.appendChild(fragment);
+
+      statsCounter.textContent = `Showing photographs ${startIndex + 1} - ${endIndex} of ${totalPhotos} (Page ${currentPage} of ${totalPages})`;
+
+      renderPaginationControls();
+    }
+
+    function renderPaginationControls() {
+      paginationBar.innerHTML = "";
+
+      // Previous button
+      const prevBtn = document.createElement("button");
+      prevBtn.className = "btn btn-outline";
+      prevBtn.textContent = "Previous";
+      prevBtn.disabled = (currentPage === 1);
+      prevBtn.onclick = () => {
+        goToPage(currentPage - 1);
+        scrollToGrid();
+      };
+      paginationBar.appendChild(prevBtn);
+
+      // Page numbers
+      for (let p = 1; p <= totalPages; p++) {
+        const btn = document.createElement("button");
+        btn.className = `btn btn-page ${p === currentPage ? "btn-primary" : "btn-outline"}`;
+        btn.textContent = p;
+        btn.onclick = () => {
+          goToPage(p);
+          scrollToGrid();
+        };
+        paginationBar.appendChild(btn);
+      }
+
+      // Next button
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "btn btn-outline";
+      nextBtn.textContent = "Next";
+      nextBtn.disabled = (currentPage === totalPages);
+      nextBtn.onclick = () => {
+        goToPage(currentPage + 1);
+        scrollToGrid();
+      };
+      paginationBar.appendChild(nextBtn);
+    }
+
+    function scrollToGrid() {
+      const navOffset = 90;
+      const targetPos = gridEl.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      window.scrollTo({ top: targetPos, behavior: "smooth" });
+    }
+
+    // Initial Load
+    goToPage(1);
+
+    // Lightbox Controls (allows browsing through all 112 photos)
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lb-img");
+    const lbTitle = document.getElementById("lb-title");
+    const lbCounter = document.getElementById("lb-counter");
+    const lbDownloadBtn = document.getElementById("lb-download-btn");
+
+    function openLightbox(index) {
+      currentLightboxIdx = index;
+      updateLightboxContent();
+      lb.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    function updateLightboxContent() {
+      const photo = GALLERY_CONFIG.photos[currentLightboxIdx];
+      lbImg.src = getDriveThumbnail(photo.id, 2400);
+      lbTitle.textContent = photo.title;
+      lbCounter.textContent = `${currentLightboxIdx + 1} of ${totalPhotos}`;
+      lbDownloadBtn.href = getDriveDownloadUrl(photo.id);
+    }
+
+    function nextPhoto() {
+      currentLightboxIdx = (currentLightboxIdx + 1) % totalPhotos;
+      updateLightboxContent();
+    }
+
+    function prevPhoto() {
+      currentLightboxIdx = (currentLightboxIdx - 1 + totalPhotos) % totalPhotos;
+      updateLightboxContent();
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("active")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextPhoto();
+      if (e.key === "ArrowLeft") prevPhoto();
+    });
+  </script>
+</body>
+</html>
