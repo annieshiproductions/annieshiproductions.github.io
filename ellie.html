@@ -191,8 +191,9 @@
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-    }}
+    }
 
+    /* Button System matching Annie Shi Productions branding */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -200,6 +201,7 @@
       gap: 8px;
       padding: 12px 28px;
       border-radius: 4px;
+      font-family: var(--font-sans);
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -207,6 +209,8 @@
       text-decoration: none;
       transition: all 0.2s ease;
       cursor: pointer;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -215,7 +219,7 @@
       border: 1px solid var(--primary-navy);
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover:not(:disabled) {
       background-color: var(--navy-hover);
       border-color: var(--navy-hover);
     }
@@ -226,8 +230,23 @@
       border: 1px solid var(--border-color);
     }
 
-    .btn-outline:hover {
+    .btn-outline:hover:not(:disabled) {
       border-color: var(--primary-navy);
+      background-color: var(--bg-light);
+    }
+
+    .btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .btn-page {
+      min-width: 42px;
+      padding: 11px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
     }
 
     .gallery-section {
@@ -343,7 +362,7 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-    /* Pagination Styles */
+    /* Pagination Bar */
     .pagination-bar {
       display: flex;
       justify-content: center;
@@ -351,49 +370,6 @@
       gap: 8px;
       margin-top: 48px;
       flex-wrap: wrap;
-    }
-
-    .page-btn {
-      min-width: 40px;
-      height: 40px;
-      padding: 0 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border-color);
-      background-color: #FFFFFF;
-      color: var(--primary-navy);
-      font-size: 13px;
-      font-weight: 500;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .page-btn:hover:not(:disabled) {
-      border-color: var(--primary-navy);
-      background-color: var(--bg-light);
-    }
-
-    .page-btn.active {
-      background-color: var(--primary-navy);
-      color: #FFFFFF;
-      border-color: var(--primary-navy);
-      font-weight: 600;
-    }
-
-    .page-btn:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
-
-    .page-nav-text {
-      padding: 0 16px;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
     }
 
     /* Lightbox */
@@ -494,7 +470,7 @@
       justify-content: center;
       transition: background 0.2s ease;
       user-select: none;
-    }
+    }}
 
     .nav-arrow:hover {
       background: rgba(255, 255, 255, 0.25);
@@ -703,8 +679,9 @@
     function renderPaginationControls() {
       paginationBar.innerHTML = "";
 
+      // Previous button
       const prevBtn = document.createElement("button");
-      prevBtn.className = "page-btn page-nav-text";
+      prevBtn.className = "btn btn-outline";
       prevBtn.textContent = "Previous";
       prevBtn.disabled = (currentPage === 1);
       prevBtn.onclick = () => {
@@ -713,9 +690,10 @@
       };
       paginationBar.appendChild(prevBtn);
 
+      // Page numbers
       for (let p = 1; p <= totalPages; p++) {
         const btn = document.createElement("button");
-        btn.className = `page-btn ${p === currentPage ? "active" : ""}`;
+        btn.className = `btn btn-page ${p === currentPage ? "btn-primary" : "btn-outline"}`;
         btn.textContent = p;
         btn.onclick = () => {
           goToPage(p);
@@ -724,8 +702,9 @@
         paginationBar.appendChild(btn);
       }
 
+      // Next button
       const nextBtn = document.createElement("button");
-      nextBtn.className = "page-btn page-nav-text";
+      nextBtn.className = "btn btn-outline";
       nextBtn.textContent = "Next";
       nextBtn.disabled = (currentPage === totalPages);
       nextBtn.onclick = () => {
@@ -741,8 +720,10 @@
       window.scrollTo({ top: targetPos, behavior: "smooth" });
     }
 
+    // Initial Load
     goToPage(1);
 
+    // Lightbox Controls (allows browsing through all 172 photos)
     const lb = document.getElementById("lightbox");
     const lbImg = document.getElementById("lb-img");
     const lbTitle = document.getElementById("lb-title");
@@ -786,3 +767,5 @@
       if (e.key === "ArrowLeft") prevPhoto();
     });
   </script>
+</body>
+</html>
