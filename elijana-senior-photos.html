@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Elijana - Senior Portraits | Annie Shi Productions</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-navy: #223859;
+      --hover-navy: #172840;
+      --bg-light-blue: #EFF5F9;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light-blue);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(34, 56, 89, 0.03);
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      font-weight: 400;
+      font-style: italic;
+      text-transform: capitalize;
+    }
+
+    .header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      line-height: 1.4;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+      border-color: var(--primary-navy);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--hover-navy);
+      border-color: var(--hover-navy);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(23, 40, 64, 0.15);
+    }
+
+    .btn-outline {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border-color: var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: #F8FAFC;
+      border-color: var(--primary-navy);
+      color: var(--hover-navy);
+      transform: translateY(-1px);
+    }
+
+    .btn-page {
+      padding: 0.5rem 0.85rem;
+      font-size: 0.875rem;
+      min-width: 2.5rem;
+    }
+
+    .btn:disabled, .btn[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .hero {
+      padding: 4.5rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 6px rgba(34, 56, 89, 0.04);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-meta {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .backup-section {
+      max-width: 1000px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .backup-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary-navy);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-shadow: 0 4px 20px rgba(34, 56, 89, 0.04);
+    }
+
+    .backup-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-navy);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .backup-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .backup-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .backup-content p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .gallery-section {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+
+    .gallery-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .gallery-count {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .gallery-quick-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .photo-grid {
+      column-count: 3;
+      column-gap: 1.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .photo-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .photo-grid {
+        column-count: 1;
+      }
+    }
+
+    .photo-card {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(34, 56, 89, 0.05);
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      min-height: 320px;
+      aspect-ratio: 2/3;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(34, 56, 89, 0.12);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(34, 56, 89, 0) 60%, rgba(34, 56, 89, 0.7) 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      pointer-events: none;
+    }
+
+    .photo-card:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    .photo-number {
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .photo-view-icon {
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.825rem;
+      font-weight: 500;
+    }
+
+    .pagination-container {
+      margin-top: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pagination-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      color: #FFFFFF;
+      z-index: 10;
+    }
+
+    .lightbox-counter {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #CBD5E1;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lightbox-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+    }
+
+    .lightbox-close {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+
+    .lightbox-close:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .lightbox-body {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 4rem;
+      overflow: hidden;
+    }
+
+    .lightbox-image-wrap {
+      max-width: 100%;
+      max-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      user-select: none;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .lightbox-nav.prev { left: 1.5rem; }
+    .lightbox-nav.next { right: 1.5rem; }
+
+    .lightbox-footer {
+      padding: 1rem 2rem;
+      text-align: center;
+      color: #94A3B8;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--primary-navy);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      stroke-width: 2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand-logo">Annie Shi <span>Productions</span></a>
+      <div class="header-tag">Senior Portraits 2026</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="badge">Full Gallery</div>
+    <h1>Elijana <em>Senior Photos</em></h1>
+    <p class="hero-meta">50 Photographs | High-Resolution Client Delivery Collection</p>
+    <div class="hero-actions">
+      <a href="https://drive.google.com/drive/folders/1vA-OW4mwFjykFTWwIzTynU4XIRRFL4cz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        Open Drive Folder
+      </a>
+    </div>
+  </section>
+
+  <section class="backup-section">
+    <div class="backup-card">
+      <div class="backup-icon">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </div>
+      <div class="backup-content">
+        <h3>Important Backup Notice</h3>
+        <p>Please download your photographs from the Google Drive folder above and save them to your personal computer or an external hard drive. Cloud delivery folders are intended for delivery and temporary sharing, so keeping a permanent local copy ensures your high-resolution original photographs remain secure forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="gallery-section" id="galleryTop">
+    <div class="gallery-header-bar">
+      <div class="gallery-count" id="galleryCount">Showing photos 1 to 30 of 50</div>
+      <div class="gallery-quick-actions">
+        <button class="btn btn-outline btn-page" id="scrollTopBtn" onclick="scrollToTop()">Top &uarr;</button>
+      </div>
+    </div>
+
+    <div class="photo-grid" id="photoGrid"></div>
+
+    <div class="pagination-container">
+      <div class="pagination-controls" id="paginationControls"></div>
+      <div class="pagination-info" id="paginationInfo">Page 1 of 2</div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-header">
+      <div class="lightbox-counter" id="lightboxCounter">Photo 1 of 50</div>
+      <div class="lightbox-actions">
+        <a href="#" class="lightbox-btn" id="lightboxDownloadBtn" download>
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Original
+        </a>
+        <button class="lightbox-close" onclick="closeLightbox()" title="Close (Esc)">
+          <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <button class="lightbox-nav prev" onclick="prevPhoto()" title="Previous (Left Arrow)">
+        <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <div class="lightbox-image-wrap">
+        <img src="" alt="" class="lightbox-image" id="lightboxImage" referrerpolicy="no-referrer">
+      </div>
+
+      <button class="lightbox-nav next" onclick="nextPhoto()" title="Next (Right Arrow)">
+        <svg class="icon" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="lightbox-footer">
+      Use left and right arrow keys to navigate, Esc to close
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">Annie Shi Productions</div>
+      <p class="footer-text">Portraits, Senior Sessions, and Event Photography based in Brookline and Boston, Massachusetts.</p>
+      <div class="footer-links">
+        <a href="https://drive.google.com/drive/folders/1vA-OW4mwFjykFTWwIzTynU4XIRRFL4cz" target="_blank" rel="noopener noreferrer">Google Drive Folder</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const RAW_DATA = [["1Hkw50GYE-sJx_LlZDEAneQWaG1Pzmy5K", "P27A3216.jpg", "1"], ["1VP2YF6HvciJIjlxP0keN3_QXtnD6Q7Iq", "P27A3227.jpg", "2"], ["19xeu7SWMX0V8Lz6kU7JM7eJlTIXhFxSG", "P27A3228.jpg", "3"], ["1SSpKwuZBSCxrgJv-YcEEX27CpSvdhy0G", "P27A3235.jpg", "4"], ["1fSD96sGITmNV64ptzONLX7RB0gAs8xoo", "P27A3244.jpg", "5"], ["1HOGooN7I1MzZLe6b-4CfIiLr7sbVlCd0", "P27A3252.jpg", "6"], ["1ylIG7Uimd5YhOef07bq8TfZE9MaHxvHw", "P27A3265.jpg", "7"], ["1u8Iwc6dfVR69MmPfSgP5WEObpTg8NAac", "P27A3273.jpg", "8"], ["1lVRuCI3E5i8x83qnWFnDfBJ4MXRsz20T", "P27A3275.jpg", "9"], ["1Qprewg4rmCx88ZP03IJ_Dom9nseSINXI", "P27A3277.jpg", "10"], ["1BogiHc6kEUVX7RQmHi5rs60i5g_Z4Akh", "P27A3280.jpg", "11"], ["1vMnXgPyg90DQNrjQ87fLzjmGo3Unc6z5", "P27A3284.jpg", "12"], ["1om12wgGtr6X4rUlBYbHHZpdW60lrnboD", "P27A3287.jpg", "13"], ["1eQTdr7WLq19lp4WeB8z5_f1oM4tLe7VU", "P27A3309.jpg", "14"], ["1h211QHiBAz6dk3JYQVMjKJ7LYbR8AxcD", "P27A3313.jpg", "15"], ["1CUwQ3veD37fN18MQKiNxTAd1QGk5bk6_", "P27A3320.jpg", "16"], ["1NvhC3PGep84zEbsIYv6IcFDo_qE78Ti9", "P27A3324.jpg", "17"], ["1oo-jJYCQ-hUkhxIK0Pq41VZOVpY9Fjus", "P27A3326.jpg", "18"], ["1w9fEXI9-d0_0VyovQHOkcYTcQY8W-Rtf", "P27A3329.jpg", "19"], ["1tbAkgWH0-e0yO-I1NaeqphWs_04m8Msw", "P27A3332.jpg", "20"], ["1M7mF7v0HbJMJUuZLnVKtC105WhS9OJZk", "P27A3366.jpg", "21"], ["124WoGjX42dspt6p31dY6YQyK0QlIg4dc", "P27A3369.jpg", "22"], ["118lI8k6WaK-bH8h0v2HIolGbsqaaKQOU", "P27A3380.jpg", "23"], ["1l6v8ud6h5DxHFjyssMoRJK0S69x4_klH", "P27A3387.jpg", "24"], ["1mYx5nhmvs4dhDeMsDABJL0NN3wrEtL2t", "P27A3399.jpg", "25"], ["1GyEMPD_Sirj4_XpjblE26vtWvAZWeibh", "P27A3403.jpg", "26"], ["1qdHqpTR2un9ePK93_di9f60oJ3I23Z50", "P27A3416.jpg", "27"], ["1ofL_ImnaJour_GY_Tb3RCRbh8roG8Ul5", "P27A3420.jpg", "28"], ["1iJNbrBVhKn-j5PAEU9ljT7BmbuvMyzaA", "P27A3423.jpg", "29"], ["1cYZy-imfRZ8gKBWj4IQ33fla6c5AtfU5", "P27A3427.jpg", "30"], ["1tr2Vpx5NG5yRWsqdmk43dUH9YncaAu9O", "P27A3433.jpg", "31"], ["1JjGW9j2NvCAwjE2E3kgVC8wIijugHOE7", "P27A3443.jpg", "32"], ["1p0XodUnCgcIdc-OVf0H9ND9fefXLtMGj", "P27A3448.jpg", "33"], ["1c02j0CkTJtBh_52sRXSfNyEdKXrKo7s7", "P27A3469.jpg", "34"], ["1OwEW7TJTREjzyGfsQPVNoWTLh9TEuKFv", "P27A3483.jpg", "35"], ["16vcLdt3mmhZMzlXx4huppzAoU5KQ9ovz", "P27A3487.jpg", "36"], ["1UL5Hlrh3U9FHBp336o-4VtsCgsZsdCdY", "P27A3490.jpg", "37"], ["1uSebFSWxfVycDdnsR8jVdPCP0wBFh_wR", "P27A3498.jpg", "38"], ["1nCELz06Th_SuzyR1KHBPeG_CRMiIYsx-", "P27A3501.jpg", "39"], ["1pVPN6-E9tAUWecWDvwzhWWQ4V1vhRu5m", "P27A3514.jpg", "40"], ["1mNsUQ-ivl5cZrCo3fSHLwmilbhQ88eqn", "P27A3517.jpg", "41"], ["1rlRvAxYo-MPM6YogtFj0d1fmIMd3jQfw", "P27A3527.jpg", "42"], ["160vTMV5D-JIZ4QMZoOH5xiDNGtpB0q3W", "P27A3531.jpg", "43"], ["1Bx4EEYXhQCye4dfiDvTTONloofQzTF7N", "P27A3560.jpg", "44"], ["1F8YKNcDcwMhK_UMPzmGu6Ox0bEbiLtLq", "P27A3568.jpg", "45"], ["1pO0gVVmm_ptnGsC15-WFfaLrmYnHZS3-", "P27A3576.jpg", "46"], ["1JULaaw-Px0N-B3hFeNs7oc3hzNnK7p02", "P27A3584.jpg", "47"], ["15XXNSgy8h9SsLfikZuuv2gafuv39nIQO", "P27A3591.jpg", "48"], ["1sm_3dIqrI8OREAbNNpTOVvoQdQAt4vOV", "P27A3601.jpg", "49"], ["18n-kuuq1z61vfcyx6gmBZeKrq79eXGtv", "P27A3610.jpg", "50"]];
+
+    const PHOTOS = RAW_DATA.map(([id, title, idxStr]) => ({
+      id: id,
+      title: title,
+      index: idxStr
+    }));
+
+    const PHOTOS_PER_PAGE = 30;
+    const TOTAL_PHOTOS = PHOTOS.length;
+    const TOTAL_PAGES = Math.ceil(TOTAL_PHOTOS / PHOTOS_PER_PAGE);
+    let currentPage = 1;
+    let currentLightboxIndex = 0;
+
+    function getThumbnailUrl(id, step = 0) {
+      const sources = [
+        `https://drive.google.com/thumbnail?id=${id}&sz=w1000`,
+        `https://lh3.googleusercontent.com/d/${id}=w800`,
+        `https://drive.google.com/uc?export=view&id=${id}`,
+        `https://lh3.googleusercontent.com/d/${id}`,
+        `https://lh3.google.com/u/0/d/${id}`
+      ];
+      return sources[step] || sources[0];
+    }
+
+    function getHiResUrl(id, step = 0) {
+      const sources = [
+        `https://drive.google.com/thumbnail?id=${id}&sz=w2400`,
+        `https://lh3.googleusercontent.com/d/${id}=w2400`,
+        `https://drive.google.com/uc?export=view&id=${id}`,
+        `https://lh3.googleusercontent.com/d/${id}`,
+        `https://lh3.google.com/u/0/d/${id}`
+      ];
+      return sources[step] || sources[0];
+    }
+
+    function handleCardImgError(img, photoId) {
+      let step = parseInt(img.dataset.step || '0', 10) + 1;
+      const maxSteps = 5;
+      if (step < maxSteps) {
+        img.dataset.step = step.toString();
+        img.src = getThumbnailUrl(photoId, step);
+      }
+    }
+
+    function handleLightboxImgError(img, photoId) {
+      let step = parseInt(img.dataset.step || '0', 10) + 1;
+      const maxSteps = 5;
+      if (step < maxSteps) {
+        img.dataset.step = step.toString();
+        img.src = getHiResUrl(photoId, step);
+      }
+    }
+
+    function renderPage(page) {
+      currentPage = page;
+      const startIndex = (page - 1) * PHOTOS_PER_PAGE;
+      const endIndex = Math.min(startIndex + PHOTOS_PER_PAGE, TOTAL_PHOTOS);
+      const currentPhotos = PHOTOS.slice(startIndex, endIndex);
+
+      const grid = document.getElementById('photoGrid');
+      grid.innerHTML = '';
+
+      currentPhotos.forEach((photo, idx) => {
+        const globalIndex = startIndex + idx;
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.onclick = () => openLightbox(globalIndex);
+
+        const initialSrc = getThumbnailUrl(photo.id, 0);
+
+        card.innerHTML = `
+          <img 
+            src="${initialSrc}" 
+            alt="${photo.title}" 
+            referrerpolicy="no-referrer"
+            data-step="0"
+            onerror="handleCardImgError(this, '${photo.id}')"
+          >
+          <div class="photo-overlay">
+            <span class="photo-number">Photo ${photo.index}</span>
+            <span class="photo-view-icon">
+              <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Enlarge
+            </span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      document.getElementById('galleryCount').textContent = `Showing photos ${startIndex + 1} to ${endIndex} of ${TOTAL_PHOTOS}`;
+      document.getElementById('paginationInfo').textContent = `Page ${currentPage} of ${TOTAL_PAGES}`;
+      renderPaginationControls();
+    }
+
+    function renderPaginationControls() {
+      const container = document.getElementById('paginationControls');
+      container.innerHTML = '';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'btn btn-outline btn-page';
+      prevBtn.textContent = 'Previous';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => goToPage(currentPage - 1);
+      container.appendChild(prevBtn);
+
+      for (let i = 1; i <= TOTAL_PAGES; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.className = (i === currentPage) ? 'btn btn-primary btn-page' : 'btn btn-outline btn-page';
+        pageBtn.textContent = i;
+        pageBtn.onclick = () => goToPage(i);
+        container.appendChild(pageBtn);
+      }
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'btn btn-outline btn-page';
+      nextBtn.textContent = 'Next';
+      nextBtn.disabled = currentPage === TOTAL_PAGES;
+      nextBtn.onclick = () => goToPage(currentPage + 1);
+      container.appendChild(nextBtn);
+    }
+
+    function goToPage(page) {
+      if (page < 1 || page > TOTAL_PAGES || page === currentPage) return;
+      renderPage(page);
+      scrollToTop();
+    }
+
+    function scrollToTop() {
+      const el = document.getElementById('galleryTop');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const photo = PHOTOS[currentLightboxIndex];
+      const img = document.getElementById('lightboxImage');
+      const counter = document.getElementById('lightboxCounter');
+      const downloadBtn = document.getElementById('lightboxDownloadBtn');
+
+      counter.textContent = `Photo ${photo.index} (${currentLightboxIndex + 1} of ${TOTAL_PHOTOS})`;
+      downloadBtn.href = `https://drive.google.com/uc?export=download&id=${photo.id}`;
+      
+      img.dataset.step = '0';
+      img.src = getHiResUrl(photo.id, 0);
+      img.onerror = () => handleLightboxImgError(img, photo.id);
+      img.alt = photo.title;
+    }
+
+    function nextPhoto() {
+      currentLightboxIndex = (currentLightboxIndex + 1) % TOTAL_PHOTOS;
+      updateLightboxContent();
+    }
+
+    function prevPhoto() {
+      currentLightboxIndex = (currentLightboxIndex - 1 + TOTAL_PHOTOS) % TOTAL_PHOTOS;
+      updateLightboxContent();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextPhoto();
+      } else if (e.key === 'ArrowLeft') {
+        prevPhoto();
+      }
+    });
+
+    // Initial render: execute immediately if DOM is ready, or on DOMContentLoaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => renderPage(1));
+    } else {
+      renderPage(1);
+    }
+  </script>
+</body>
+</html>
