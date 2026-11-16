@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Market Minds Photography Fundraiser (NOV 15) | Annie Shi Productions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-navy: #223859;
+      --hover-navy: #172840;
+      --bg-light-blue: #EFF5F9;
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light-blue);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.15rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(34, 56, 89, 0.03);
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
+
+    .brand-logo span {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .header-nav a:hover {
+      color: var(--primary-navy);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--hover-navy);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border-color: var(--primary-navy);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-page {
+      padding: 0.42rem 0.78rem;
+      font-size: 0.85rem;
+    }
+
+    .hero {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 3.25rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(34, 56, 89, 0.08);
+      color: var(--primary-navy);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 0.95rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.8vw, 3.35rem);
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.15;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .hero-meta {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.65rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .gallery-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem 2.75rem;
+    }
+
+    .pagination-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding: 0.75rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+    }
+
+    .page-info {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .page-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .photo-card {
+      position: relative;
+      width: 100%;
+      min-height: 180px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 14px rgba(34, 56, 89, 0.04);
+      cursor: pointer;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .photo-hover {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(23, 40, 64, 0.58) 0%, rgba(23, 40, 64, 0.08) 42%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0.95rem 1.05rem;
+      pointer-events: none;
+    }
+
+    .photo-card:hover .photo-hover {
+      opacity: 1;
+    }
+
+    .photo-label {
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .photo-hint {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .connect-section {
+      max-width: 1040px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .connect-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      box-shadow: 0 4px 14px rgba(34, 56, 89, 0.04);
+    }
+
+    .connect-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--primary-navy);
+      line-height: 1.2;
+    }
+
+    .connect-card p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    .connect-card .btn {
+      margin-top: auto;
+    }
+
+    footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-color);
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      color: var(--primary-navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Full-Screen Lightbox Popup */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .lb-btn {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    .lb-close {
+      top: 1.25rem;
+      right: 1.5rem;
+    }
+
+    .lb-prev {
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lb-next {
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lb-bar {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    .lb-bar a {
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .lb-bar a:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="https://annieshiproductions.github.io" target="_blank" rel="noopener noreferrer" class="brand-logo">Annie Shi <span>Productions</span></a>
+      <nav class="header-nav">
+        <a href="https://annieshiproductions.github.io" target="_blank" rel="noopener noreferrer">More of My Work</a>
+        <a href="https://www.marketmindsyouth.org" target="_blank" rel="noopener noreferrer">Market Minds</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="badge">Charity Mini-Session</div>
+    <h1>Market Minds Photography Fundraiser <em>NOV 15</em></h1>
+    <p class="hero-meta">10 Photos | Supporting youth financial literacy</p>
+    <div class="hero-actions">
+      <a href="https://drive.google.com/drive/folders/1D5MJkUUrgEA2b3ES2encsrqiS2VFg7Nz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Drive Folder</a>
+      <a href="https://www.marketmindsyouth.org" target="_blank" rel="noopener noreferrer" class="btn btn-outline">About Market Minds</a>
+      <a href="https://annieshiproductions.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline">More of My Work</a>
+    </div>
+  </section>
+
+  <main class="gallery-wrapper" id="gallery-top">
+    <div id="pagination-top" class="pagination-bar" style="display: none;">
+      <div class="page-info" id="page-info-top">Showing 1-10 of 10</div>
+      <div class="page-controls" id="page-controls-top"></div>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+
+    <div id="pagination-bottom" class="pagination-bar" style="display: none; margin-top: 1.25rem;">
+      <div class="page-info" id="page-info-bottom">Showing 1-10 of 10</div>
+      <div class="page-controls" id="page-controls-bottom"></div>
+    </div>
+  </main>
+
+  <section class="connect-section">
+    <div class="connect-grid">
+      <div class="connect-card">
+        <h3>Learn About Market Minds</h3>
+        <p>Your contribution supports Market Minds, Inc. (501(c)(3)), helping students build practical financial literacy skills through workshops and community programs.</p>
+        <a href="https://www.marketmindsyouth.org" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit marketmindsyouth.org</a>
+      </div>
+      <div class="connect-card">
+        <h3>More of My Work</h3>
+        <p>Explore portraits, senior sessions, couple shoots, and event coverage across Brookline and Greater Boston.</p>
+        <a href="https://annieshiproductions.github.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline">annieshiproductions.github.io</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Annie Shi Productions</div>
+    <p class="footer-text">Market Minds Photography Fundraiser (NOV 15)</p>
+    <div class="footer-links">
+      <a href="https://annieshiproductions.github.io" target="_blank" rel="noopener noreferrer">annieshiproductions.github.io</a>
+      <a href="https://www.marketmindsyouth.org" target="_blank" rel="noopener noreferrer">marketmindsyouth.org</a>
+      <a href="https://drive.google.com/drive/folders/1D5MJkUUrgEA2b3ES2encsrqiS2VFg7Nz" target="_blank" rel="noopener noreferrer">Google Drive Folder</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="if(event.target === this) closeLightbox()">
+    <button class="lb-btn lb-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
+    <img id="lb-img" src="" referrerpolicy="no-referrer" alt="Full size photo">
+    <button class="lb-btn lb-next" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
+    <div class="lb-bar">
+      <span id="lb-caption"></span>
+      <a id="lb-download" href="#" target="_blank" rel="noopener noreferrer">Download</a>
+    </div>
+  </div>
+
+  <script>
+    const RAW_DATA = [["1eez9jisEA8PYcWD8ohwG-NYnsCNF8BsG", "1"], ["14ESe0posY4IwiK6glPSySzME_M3v6kqB", "2"], ["1RPIy3JskC2vHQBs5JYY8wLEJzVh-U0X5", "3"], ["1Y1mv4dRmtaPkpT1DdaUFyDHOWqNpuGzd", "4"], ["1SBiT_eyHDRZ_b7tMbhJz_9GBk43DDNPi", "5"], ["1dsyLQ-78E5_aUOpztcUpvvLdnQDvCltx", "6"], ["1v8-UWvXhPoGLgfTj05uk41CD8POYYzUE", "7"], ["1RIs91ZH9sCVIIe_zV0kVULBTYmfOSps8", "8"], ["1S82jZrZajfoQplhPTg7LClpHYtkdZlpN", "9"], ["171ioO0F3D_rKhs72pHCRYjq5KHPRbHgo", "10"]];
+    const PER_PAGE = 30;
+    let currentPage = 1;
+    let currentSlide = 0;
+
+    function thumbSources(id) {
+      return [
+        "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000",
+        "https://lh3.googleusercontent.com/d/" + id + "=w800",
+        "https://drive.google.com/uc?export=view&id=" + id,
+        "https://lh3.googleusercontent.com/d/" + id
+      ];
+    }
+
+    function fullSources(id) {
+      return [
+        "https://drive.google.com/thumbnail?id=" + id + "&sz=w2400",
+        "https://lh3.googleusercontent.com/d/" + id + "=w2400",
+        "https://drive.google.com/uc?export=view&id=" + id
+      ];
+    }
+
+    function downloadUrl(id) {
+      return "https://drive.google.com/uc?export=download&id=" + id;
+    }
+
+    function attachFallback(imgEl, sources) {
+      let idx = 0;
+      imgEl.src = sources[idx];
+      imgEl.onerror = function () {
+        idx += 1;
+        if (idx < sources.length) {
+          imgEl.src = sources[idx];
+        }
+      };
+    }
+
+    function renderPage(page) {
+      const totalPages = Math.max(1, Math.ceil(RAW_DATA.length / PER_PAGE));
+      currentPage = Math.min(Math.max(1, page), totalPages);
+      const start = (currentPage - 1) * PER_PAGE;
+      const end = Math.min(start + PER_PAGE, RAW_DATA.length);
+      const grid = document.getElementById("gallery-grid");
+      grid.innerHTML = "";
+
+      for (let i = start; i < end; i++) {
+        const [id, num] = RAW_DATA[i];
+        const card = document.createElement("div");
+        card.className = "photo-card";
+        card.onclick = () => openLightbox(i);
+
+        const img = document.createElement("img");
+        img.alt = "Photo #" + num;
+        img.referrerPolicy = "no-referrer";
+        attachFallback(img, thumbSources(id));
+
+        const hover = document.createElement("div");
+        hover.className = "photo-hover";
+        hover.innerHTML = `
+          <span class="photo-label">Photo #${num}</span>
+          <span class="photo-hint">View</span>
+        `;
+
+        card.appendChild(img);
+        card.appendChild(hover);
+        grid.appendChild(card);
+      }
+
+      const showPager = totalPages > 1;
+      ["top", "bottom"].forEach((pos) => {
+        const bar = document.getElementById("pagination-" + pos);
+        bar.style.display = showPager ? "flex" : "none";
+        if (!showPager) return;
+        document.getElementById("page-info-" + pos).textContent =
+          "Showing " + (start + 1) + "-" + end + " of " + RAW_DATA.length;
+        const ctrl = document.getElementById("page-controls-" + pos);
+        ctrl.innerHTML = "";
+
+        const prevBtn = document.createElement("button");
+        prevBtn.className = "btn btn-outline btn-page";
+        prevBtn.textContent = "Previous";
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.onclick = () => {
+          renderPage(currentPage - 1);
+          document.getElementById("gallery-top").scrollIntoView({ behavior: "smooth" });
+        };
+        ctrl.appendChild(prevBtn);
+
+        for (let p = 1; p <= totalPages; p++) {
+          const btn = document.createElement("button");
+          btn.className = p === currentPage ? "btn btn-primary btn-page" : "btn btn-outline btn-page";
+          btn.textContent = String(p);
+          btn.onclick = () => {
+            renderPage(p);
+            document.getElementById("gallery-top").scrollIntoView({ behavior: "smooth" });
+          };
+          ctrl.appendChild(btn);
+        }
+
+        const nextBtn = document.createElement("button");
+        nextBtn.className = "btn btn-outline btn-page";
+        nextBtn.textContent = "Next";
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.onclick = () => {
+          renderPage(currentPage + 1);
+          document.getElementById("gallery-top").scrollIntoView({ behavior: "smooth" });
+        };
+        ctrl.appendChild(nextBtn);
+      });
+    }
+
+    function openLightbox(idx) {
+      currentSlide = idx;
+      updateLightbox();
+      document.getElementById("lightbox").classList.add("open");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("open");
+    }
+
+    function changeSlide(delta) {
+      currentSlide = (currentSlide + delta + RAW_DATA.length) % RAW_DATA.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const [id, num] = RAW_DATA[currentSlide];
+      const lbImg = document.getElementById("lb-img");
+      attachFallback(lbImg, fullSources(id));
+      document.getElementById("lb-caption").textContent =
+        "Photo #" + num + " (" + (currentSlide + 1) + " of " + RAW_DATA.length + ")";
+      document.getElementById("lb-download").href = downloadUrl(id);
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (!document.getElementById("lightbox").classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") changeSlide(-1);
+      if (e.key === "ArrowRight") changeSlide(1);
+    });
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => renderPage(1));
+    } else {
+      renderPage(1);
+    }
+  </script>
+</body>
+</html>
